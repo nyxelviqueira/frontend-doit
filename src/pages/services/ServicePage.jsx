@@ -2,30 +2,49 @@ import { useParams } from "react-router-dom";
 import { useService } from "../../hooks/useService";
 import { ErrorMessage } from "../../../src/components/errorMessage/ErrorMessage";
 import { Service } from "../../components/service/Service";
-import { Replies } from "../../components/replies/Replies";
+import { GetReplies } from "../../components/GetReplies/GetReplies";
 import { ModifyService } from "../../components/modifyService/ModifyService";
+import { NewReply } from "../../components/newReply/NewReply";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import { Link } from "react-router-dom";
 
-export const ServicePage = () => {
+export const ServicePage = ({ reply, setReply }) => {
   const { id } = useParams();
   const { service, loading, error, setService } = useService(id);
+  const { user } = useContext(AuthContext);
 
   if (loading) return <p>cargando UN SOLO servcicio....</p>;
   if (error) return <ErrorMessage message={error} />;
 
   return (
     <section>
-      <h1>Service from {service.username}</h1>
-
       <Service service={service} />
 
-      <a href={`${process.env.REACT_APP_BACKEND}/${service.file}`} download>
-        Previsualizar archivo adjunto
-      </a>
+      {/* Pongo que solo los usuarios registrados puedan editar sus servicios */}
 
-      <div>
+      {user.user.id === service.idUser ? (
         <ModifyService service={service} setService={setService} />
-      </div>
-      <Replies></Replies>
+      ) : (
+        ""
+      )}
+
+      {/* Cargo todos los comentarios */}
+      <GetReplies reply={reply} />
+
+      {/* Si hay usuario registrado que se abra caja de comentarios */}
+      {user ? (
+        <NewReply reply={reply} setReply={setReply} />
+      ) : (
+        <ul className="auth">
+          <li>
+            <Link to={"/register"}>Register</Link>
+          </li>
+          <li>
+            <Link to={"/login"}>Login</Link>
+          </li>
+        </ul>
+      )}
     </section>
   );
 };

@@ -147,18 +147,21 @@ export const editModifyService = async ({ id, data, token }) => {
 
 //Llamadas de replies
 
-export const sendRepliesService = async ({ id, reply, token }) => {
+export const sendRepliesService = async ({ idService, data, token }) => {
   const response = await fetch(
-    `${process.env.REACT_APP_BACKEND}/services/${id}`,
+    `${process.env.REACT_APP_BACKEND}/services/${idService}`,
+
     {
       method: "POST",
-      body: reply,
+      body: data,
       headers: {
         Authorization: token,
       },
     }
   );
   const json = await response.json();
+
+  console.log("soy json", json);
 
   if (!response.ok) {
     throw new Error(json.message);
