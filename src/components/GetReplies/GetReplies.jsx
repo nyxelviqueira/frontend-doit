@@ -21,8 +21,7 @@ export const GetReplies = () => {
       <section>
         {replies.map((reply) => (
           <>
-           ( <h3>Reply by {reply.username}</h3>
-            {console.log(reply)}
+            <h3>Reply by {reply.username}</h3>
             <p>{reply.observations}</p>
             {reply.finalFile === null ? (
               <a
@@ -34,8 +33,7 @@ export const GetReplies = () => {
             ) : (
               "No hay archivos que mostrar"
             )}
-
-            <p>Reply added on {new Date(service.createdAt).toLocaleString()}</p>)
+            <p>Reply added on {new Date(service.createdAt).toLocaleString()}</p>
           </>
         ))}
       </section>

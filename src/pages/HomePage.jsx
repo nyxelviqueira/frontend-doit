@@ -1,22 +1,17 @@
-import { HomePageCards } from "../components/homePage/HomePageCard"
-
+import { HomePageCards } from "../components/homePage/HomePageCard";
+import { ServiceFinder } from "../components/serviceFinder/ServiceFinder";
 
 export const HomePage = () => {
+  return (
+    <>
+      <main>
+        <ServiceFinder />
+        <div>
+          OJO, TENEMOS QUE PONER EL MISMO TAMAÑO PARA LAS FOTOS, SI NO QUEDA MAL
+        </div>
 
-
-
-
-    return (
-
-        <main>
-            <h1>List Services</h1>
-            <input type="text" placeholder="Search a service"></input>
-            <button>Search</button>
-            <div>OJO, TENEMOS QUE PONER EL MISMO TAMAÑO PARA LAS FOTOS, SI NO QUEDA MAL</div>
-            <HomePageCards className="cardsHomePage"/>
-        </main>
-
-    )
-
-
-}
+        {/* <HomePageCards className="cardsHomePage" /> */}
+      </main>
+    </>
+  );
+};

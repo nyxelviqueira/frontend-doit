@@ -15,8 +15,6 @@ export const useReplies = (id, idService) => {
         setLoading(true);
         const data = await sendRepliesService(idService);
 
-        console.log(data);
-
         setAddReply(data.replies);
       } catch (error) {
         setError(error.message);

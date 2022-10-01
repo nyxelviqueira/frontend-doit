@@ -122,7 +122,7 @@ export const getAllServicesService = async () => {
   return json.data;
 };
 
-// Esto es para editar el Servicio
+// Esto es para editar el Servicio (mejora: que el servicio devuelva si está done o no)
 export const editModifyService = async ({ id, data, token }) => {
   const response = await fetch(
     `${process.env.REACT_APP_BACKEND}/services/${id}`,
@@ -141,12 +141,19 @@ export const editModifyService = async ({ id, data, token }) => {
   if (!response.ok) {
     throw new Error(json.message);
   }
-  console.log(">>>>>>>>>>>>>>>data back", data);
-  return json.data;
+
+  if (data.realized === 1) {
+    const message = json;
+    message.realized = 1;
+
+    return message;
+  }
+
+  return json;
 };
 
 //Llamadas de replies
-
+// xa poder enviar el reply
 export const sendRepliesService = async ({ idService, data, token }) => {
   const response = await fetch(
     `${process.env.REACT_APP_BACKEND}/services/${idService}`,
@@ -161,14 +168,13 @@ export const sendRepliesService = async ({ idService, data, token }) => {
   );
   const json = await response.json();
 
-  console.log("soy json", json);
-
   if (!response.ok) {
     throw new Error(json.message);
   }
   return json.data;
 };
 
+// obtener los reply del back y pintarlos
 export const getRepliesServiceService = async (id) => {
   const response = await fetch(
     `${process.env.REACT_APP_BACKEND}/replies/${id}`

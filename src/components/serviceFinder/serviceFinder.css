@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.suggestion title{
+    background-color: blueviolet;
+}
+.search-service {
+background-color: darkgreen;
+}
+
+.btn-service {
+background-color: cornflowerblue;
+}

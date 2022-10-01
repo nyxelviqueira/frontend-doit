@@ -11,14 +11,11 @@ export const ModifyService = ({ service, setService }) => {
   const [error, setError] = useState("");
   const [sending, setSending] = useState(false);
   const { token } = useContext(AuthContext);
-  console.log(service);
 
   const [description, setDescription] = useState(service.description);
   const [category, setCategory] = useState(service.category);
   const [realized, setRealized] = useState(Boolean(service.realized));
-
-  //   console.log(">>>>>>>modify service", service.id);
-  //   console.log(">>>>>>>titulo: ", service.category);
+  const [disabled, setDisabled] = useState(Boolean(service.disabled));
 
   const handleForm = async (e) => {
     e.preventDefault();
@@ -35,7 +32,12 @@ export const ModifyService = ({ service, setService }) => {
         realized: realized ? 1 : 0,
       };
 
-      await editModifyService({ id, data, token });
+      const response = await editModifyService({ id, data, token });
+
+      console.log(response);
+      if (response.realized) {
+        setDisabled(true);
+      }
 
       setService(data);
     } catch (error) {
@@ -97,10 +99,13 @@ export const ModifyService = ({ service, setService }) => {
                 <input
                   type="checkbox"
                   name="realized"
+                  disabled={disabled}
                   checked={realized}
-                  onChange={(e) => setRealized(e.target.checked)}
+                  onChange={(e) => {
+                    setRealized(e.target.checked);
+                  }}
                 />
-                Realized
+                Done
               </li>
             </ul>
           </fieldset>
