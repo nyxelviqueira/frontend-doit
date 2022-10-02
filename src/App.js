@@ -13,6 +13,7 @@ import { NewServicePage } from "./pages/services/NewServicePage";
 import { ListServicesPage } from "./pages/services/ServicesListPage";
 import { ProfilePage } from "./pages/users/ProfilePage";
 import { ServicePage } from "./pages/services/ServicePage";
+import { FilterServicesPage } from "./components/filterCategories/FilterServicesPage";
 
 function App() {
   return (
@@ -26,6 +27,11 @@ function App() {
         <Route path="/users/:id" element={<ProfilePage />} />
         <Route path="/newservice" element={<NewServicePage />} />
         <Route path="/services" element={<ListServicesPage />} />
+
+        <Route
+          path="/services/category/:category"
+          element={<FilterServicesPage />}
+        />
 
         <Route path="/services/:id" element={<ServicePage />} />
         <Route path="*" element={<NotFoundPage />} />
