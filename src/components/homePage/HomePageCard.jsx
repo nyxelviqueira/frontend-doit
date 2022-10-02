@@ -10,7 +10,6 @@ import writing from "./assets/Writing-and-Translation.png";
 
 import "./homePageCard.css";
 
-
 /* HAY QUE QUITAR LOS WIDTH Y REDIMENSIONAR IMÁGENES */
 export const HomePageCards = () => {
   return (
