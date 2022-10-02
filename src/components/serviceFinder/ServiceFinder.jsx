@@ -7,6 +7,7 @@ import useServices from "../../hooks/useServices";
 import Autosuggest from "react-autosuggest";
 import { useState } from "react";
 import { Service } from "../service/Service";
+import { Link } from "react-router-dom";
 
 export const ServiceFinder = () => {
   const { services, loading, error } = useServices();
@@ -54,19 +55,22 @@ export const ServiceFinder = () => {
 
   const renderSuggestion = (suggestion) => (
     <div className="suggestion" onClick={() => selectService(suggestion)}>
-      {`${suggestion.title} - ${suggestion.description}`}
+      <Link to={`/services/${suggestion.id}`}>
+        {`${suggestion.title} - ${suggestion.description}`}
+      </Link>
     </div>
   );
 
-  const selectService = (services) => {
-    setSelectedService(services);
+  const selectService = (service) => {
+    setSelectedService(service);
+    console.log(service);
   };
   const onChange = (e, { newValue }) => {
     setValue(newValue);
   };
 
   const inputProps = {
-    placeholder: "Title or description",
+    placeholder: "Search services",
     value,
     onChange,
   };
@@ -104,10 +108,10 @@ export const ServiceFinder = () => {
           onSuggestionSelected={eventEnter}
         />
         <br />
-        <button className="btn-service" onClick={() => selectedService}>
+        {/* <button className="btn-service" onClick={() => selectedService}>
           Search
-        </button>
-        <Service service={selectedService} />
+        </button> */}
+        {/* <Service service={selectedService} /> */}
       </div>
     </>
   );

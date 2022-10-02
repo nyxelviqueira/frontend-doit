@@ -1,8 +1,8 @@
-import './App.css';
+import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
-import { Header } from './components/header/Header'
-import { Footer } from './components/footer/Footer';
+import { Header } from "./components/header/Header";
+import { Footer } from "./components/footer/Footer";
 
 import { HomePage } from "./pages/HomePage";
 import { RegisterPage } from "./pages/users/RegisterUserPage";
@@ -11,15 +11,11 @@ import { MyUserPage } from "./pages/users/MyUserPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { NewServicePage } from "./pages/services/NewServicePage";
 import { ListServicesPage } from "./pages/services/ServicesListPage";
-import { ProfilePage } from './pages/users/ProfilePage';
+import { ProfilePage } from "./pages/users/ProfilePage";
 import { ServicePage } from "./pages/services/ServicePage";
-
-
-
 
 function App() {
   return (
-
     <main>
       <Header />
       <Routes>
@@ -30,6 +26,7 @@ function App() {
         <Route path="/users/:id" element={<ProfilePage />} />
         <Route path="/newservice" element={<NewServicePage />} />
         <Route path="/services" element={<ListServicesPage />} />
+
         <Route path="/services/:id" element={<ServicePage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

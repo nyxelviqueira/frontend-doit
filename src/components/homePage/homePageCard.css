@@ -1,9 +1,18 @@
 /*Versión MVL*/
 
-.home-page {
+  
+.home-page-wrapper {
   display: flex;
   flex-direction: column;
   margin: 0 0 8rem 0;
+}
+
+
+.home-page-title {
+  margin: 4rem 0 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .home-page-card {
@@ -53,7 +62,7 @@
 
 /* VERSIÓN PC */
 @media (min-width: 1025px) {
-  .home-page {
+  .home-page-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(25%);

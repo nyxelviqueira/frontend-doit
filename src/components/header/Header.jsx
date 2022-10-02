@@ -1,5 +1,6 @@
 import { Auth } from "../auth/Auth";
 import { TypeServices } from "../typeServices/TypeServices";
+import { ServiceFinder } from "../serviceFinder/ServiceFinder";
 import "./header.css";
 import icon from "../../../src/assets/icon.png";
 import { Link } from "react-router-dom";
@@ -14,7 +15,8 @@ export const Header = () => {
           <h1 className="title">DoIt!</h1>
         </Link>
 
-        <TypeServices />
+        {/* <TypeServices /> */}
+
         <Auth />
       </nav>
     </header>

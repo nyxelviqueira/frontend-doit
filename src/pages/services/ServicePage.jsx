@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 
 export const ServicePage = ({ reply, setReply }) => {
   const { id } = useParams();
+  console.log(useParams());
   const { service, loading, error, setService } = useService(id);
   const { user } = useContext(AuthContext);
 
@@ -23,7 +24,7 @@ export const ServicePage = ({ reply, setReply }) => {
 
       {/* Pongo que solo los usuarios registrados puedan editar sus servicios */}
 
-      {user.user.id === service.idUser ? (
+      {user?.user?.id === service?.idUser ? (
         <ModifyService service={service} setService={setService} />
       ) : (
         ""

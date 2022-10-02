@@ -7,9 +7,40 @@
     background-color: blueviolet;
 }
 .search-service {
-background-color: darkgreen;
+    padding: 0.5rem;
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
 }
 
 .btn-service {
-background-color: cornflowerblue;
+    background-color: #cacbcb;
+    border: none;
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+    font-size: 0.7rem;
 }
+
+.react-autosuggest__suggestions-container {
+    font-size: 0.5rem;
+    color: rgb(63, 63, 63);
+    background-color: rgb(216, 216, 216);
+
+
+}
+.react-autosuggest__input,
+.react-autosuggest__input::placeholder {
+    font-size: 0.7rem;
+
+}
+
+.react-autosuggest__container {
+    display: flex;
+    flex-direction: column;
+ /*    position: absolute; */
+    top: 43%;
+    right: 20px;
+}
+
+/* para q nos funcione bottom: 0 en responsive mvl
+left: 20px esto hará q se coloque debajo del mvl  */
