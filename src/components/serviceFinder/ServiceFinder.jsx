@@ -54,11 +54,11 @@ export const ServiceFinder = () => {
   };
 
   const renderSuggestion = (suggestion) => (
-    <div className="suggestion" onClick={() => selectService(suggestion)}>
+    <di className="suggestion" onClick={() => selectService(suggestion)}>
       <Link to={`/services/${suggestion.id}`}>
         {`${suggestion.title} - ${suggestion.description}`}
       </Link>
-    </div>
+    </di>
   );
 
   const selectService = (service) => {
@@ -70,7 +70,7 @@ export const ServiceFinder = () => {
   };
 
   const inputProps = {
-    placeholder: "Search services",
+    placeholder: "Search services...",
     value,
     onChange,
   };
