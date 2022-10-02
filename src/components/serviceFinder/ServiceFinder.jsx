@@ -54,11 +54,11 @@ export const ServiceFinder = () => {
   };
 
   const renderSuggestion = (suggestion) => (
-    <di className="suggestion" onClick={() => selectService(suggestion)}>
+    <div className="suggestion" onClick={() => selectService(suggestion)}>
       <Link to={`/services/${suggestion.id}`}>
         {`${suggestion.title} - ${suggestion.description}`}
       </Link>
-    </di>
+    </div>
   );
 
   const selectService = (service) => {
