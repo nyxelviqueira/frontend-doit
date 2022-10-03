@@ -50,8 +50,8 @@
     padding: 0.2rem;
 
 }
-.react-autosuggest__input:focus {
-}
+/* .react-autosuggest__input:focus {
+} */
 
 .react-autosuggest__container {
     display: flex;

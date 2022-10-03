@@ -11,24 +11,28 @@ export const Service = ({ service }) => {
   }
 
   return (
-    <article>
+    <article className="service-container">
       <Link to={`/services/${service.id}`}>
-        <h2>{service.title}</h2>
+        <h3 className="service-title">{service.title}</h3>
       </Link>
-      <h3>
-        {service.category} -{" "}
-        <Link to={`/users/${service.idUser}`}>{service.username}</Link>
-      </h3>
-      <p>{service.description}</p>
 
-      <p>{done}</p>
+      <h4 className="service-category">{service.category}</h4>
 
-      <a href={`${process.env.REACT_APP_BACKEND}/${service.file}`} download>
+      <p className="service-description">{service.description}</p>
+
+      <h5 className="service-realized">{done}</h5>
+
+      <a
+        className="service-file-link"
+        href={`${process.env.REACT_APP_BACKEND}/${service.file}`}
+        download
+      >
         Previsualizar archivo adjunto
       </a>
 
-      <p>
-        By {service.username} on {new Date(service.createdAt).toLocaleString()}
+      <p className="service-createdAt">
+        By <Link to={`/users/${service.idUser}`}>{service.username} </Link> on{" "}
+        {new Date(service.createdAt).toLocaleString()}
       </p>
     </article>
   );

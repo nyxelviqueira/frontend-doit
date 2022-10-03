@@ -55,9 +55,7 @@ export const ServiceFinder = () => {
 
   const renderSuggestion = (suggestion) => (
     <div className="suggestion" onClick={() => selectService(suggestion)}>
-      <Link to={`/services/${suggestion.id}`}>
-        {`${suggestion.title} - ${suggestion.description}`}
-      </Link>
+      <Link to={`/services/${suggestion.id}`}>{`${suggestion.title}`}</Link>
     </div>
   );
 
@@ -108,10 +106,6 @@ export const ServiceFinder = () => {
           onSuggestionSelected={eventEnter}
         />
         <br />
-        {/* <button className="btn-service" onClick={() => selectedService}>
-          Search
-        </button> */}
-        {/* <Service service={selectedService} /> */}
       </div>
     </>
   );
