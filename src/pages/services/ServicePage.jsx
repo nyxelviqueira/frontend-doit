@@ -17,7 +17,7 @@ export const ServicePage = () => {
 
   return (
     <section>
-      <Service service={service} />
+      <Service service={service}/>
 
       {/* Pongo que solo los usuarios registrados puedan editar sus servicios */}
 
