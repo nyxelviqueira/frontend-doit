@@ -1,30 +1,12 @@
 import { useEffect, useState } from "react";
-import { getRepliesServiceService, sendRepliesService } from "../services";
+import { getRepliesServiceService } from "../services";
 
-export const useReplies = (id, idService) => {
+export const useReplies = (id) => {
   //Addcoment, cargamos en componente padre
 
   const [replies, setReplies] = useState([]);
-  const [addReply, setAddReply] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-
-  useEffect(() => {
-    const loadReply = async () => {
-      try {
-        setLoading(true);
-        const data = await sendRepliesService(idService);
-
-        setAddReply(data.replies);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadReply();
-  }, [idService]);
 
   useEffect(() => {
     const loadGetReply = async () => {
@@ -43,7 +25,7 @@ export const useReplies = (id, idService) => {
     loadGetReply();
   }, [id]);
 
-  return { replies, addReply, error, loading };
+  return { replies, setReplies, error, loading };
 };
 
 export default useReplies;

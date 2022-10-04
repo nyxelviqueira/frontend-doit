@@ -7,12 +7,12 @@ a {
   text-decoration: none;
 } 
 
-header.header {
+header {
   height: 5rem;
   max-width: 100%;
   display: flex;
   align-items: center;
-  background: rgba(14, 29, 52, 0.9);
+  background-color: rgba(14, 29, 52, 0.9);
   position: sticky;
   }
   

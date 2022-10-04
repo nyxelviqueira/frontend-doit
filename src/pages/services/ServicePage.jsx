@@ -1,15 +1,13 @@
-import { useParams } from "react-router-dom";
-import { useService } from "../../hooks/useService";
-import { ErrorMessage } from "../../../src/components/errorMessage/ErrorMessage";
-import { Service } from "../../components/service/Service";
-import { GetReplies } from "../../components/GetReplies/GetReplies";
-import { ModifyService } from "../../components/modifyService/ModifyService";
-import { NewReply } from "../../components/newReply/NewReply";
 import { useContext } from "react";
+import { useParams } from "react-router-dom";
+import { ErrorMessage } from "../../../src/components/errorMessage/ErrorMessage";
+import { ModifyService } from "../../components/modifyService/ModifyService";
+import { Replies } from "../../components/replies/Replies";
+import { Service } from "../../components/service/Service";
 import { AuthContext } from "../../context/AuthContext";
-import { Link } from "react-router-dom";
+import { useService } from "../../hooks/useService";
 
-export const ServicePage = ({ reply, setReply }) => {
+export const ServicePage = () => {
   const { id } = useParams();
   const { service, loading, error, setService } = useService(id);
   const { user } = useContext(AuthContext);
@@ -29,22 +27,7 @@ export const ServicePage = ({ reply, setReply }) => {
         ""
       )}
 
-      {/* Cargo todos los comentarios */}
-      <GetReplies reply={reply} />
-
-      {/* Si hay usuario registrado que se abra caja de comentarios */}
-      {user ? (
-        <NewReply reply={reply} setReply={setReply} />
-      ) : (
-        <ul className="auth">
-          <li>
-            <Link to={"/register"}>Register</Link>
-          </li>
-          <li>
-            <Link to={"/login"}>Login</Link>
-          </li>
-        </ul>
-      )}
+      <Replies id={id} user={user} />
     </section>
   );
 };

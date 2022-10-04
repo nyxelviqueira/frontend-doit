@@ -3,22 +3,24 @@ import { sendRepliesService } from "../../../src/services/index";
 import { useContext } from "react";
 import { AuthContext } from "../../../src/context/AuthContext";
 
-export const NewReply = ({ idUser }) => {
+export const NewReply = ({ id, setReplies }) => {
   const [error, setError] = useState("");
   const [sending, setSending] = useState(false);
-  const [reply, setReply] = useState(false);
   const { token } = useContext(AuthContext);
-
-  const [observations, setObservations] = useState(reply.observations);
 
   const handleForm = async (e) => {
     e.preventDefault();
 
     try {
       setSending(true);
-      const data = { ...reply };
-      await sendRepliesService({ data, token });
-      setReply(data);
+      const data = new FormData(e.target);
+      const reply = await sendRepliesService({ id, data, token });
+
+      setReplies((replies) => {
+        return [...replies, reply];
+      });
+
+      e.target.reset();
     } catch (error) {
       setError(error.message);
     }
@@ -33,15 +35,13 @@ export const NewReply = ({ idUser }) => {
               <li>
                 <label htmlFor="observations">Observations: </label>
                 <textarea
-                  name="title"
+                  name="observations"
                   id="observations"
                   rows="10"
                   cols="80"
                   placeholder="Insert a new observation"
                   autoFocus
                   required
-                  value={observations}
-                  onChange={(e) => setObservations(e.target.value)}
                 />
               </li>
 
