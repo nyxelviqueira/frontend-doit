@@ -3,6 +3,7 @@ import { sendNewService } from "../../../src/services/index";
 import { useContext } from "react";
 import { AuthContext } from "../../../src/context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import "./styles/newServicePage.css";
 
 export const NewServicePage = ({ addService }) => {
   const [error, setError] = useState("");
@@ -29,24 +30,42 @@ export const NewServicePage = ({ addService }) => {
   };
   return (
     <>
-      <form onSubmit={handleForm} action="#">
-        <fieldset>
-          <legend>New Service</legend>
-          <ul>
-            <li>
-              <label htmlFor="titleService">Title: </label>
+      <form onSubmit={handleForm} action="#" className="form-newServicePage">
+        <fieldset className="fieldset-newServicePage">
+          <legend className="legend-newServicePage">
+            Create your new service
+          </legend>
+          <ul className="ul-newServicePage">
+            <li className="li-newServicePage title-newServicePage">
+              <label
+                htmlFor="titleService"
+                className="label-title-newServicePage"
+              >
+                Title
+              </label>
               <input
+                className="input-title-newServicePage"
                 type="text"
                 name="title"
                 id="titleService"
                 placeholder="Name your service"
                 autoFocus
+                spellCheck="false"
                 required
               />
             </li>
-            <li>
-              <label htmlFor="category">Category</label>
-              <select name="category" id="category">
+            <li className="li-newServicePage">
+              <label
+                htmlFor="category"
+                className="label-category-newServicePage"
+              >
+                Choose category
+              </label>
+              <select
+                name="category"
+                id="category"
+                className="select-option-category"
+              >
                 <option value="Programming and Development">
                   Programming and Development
                 </option>
@@ -65,25 +84,36 @@ export const NewServicePage = ({ addService }) => {
               </select>
             </li>
 
-            <li>
-              <label htmlFor="descriptionService">Description:</label>
+            <li className="li-newServicePage">
+              <label htmlFor="descriptionService">
+                <p className="label-p">Describe your service</p>
+              </label>
               <textarea
+                className="textarea-newServicePage"
                 name="description"
                 id="descriptionService"
                 rows="10"
-                cols="80"
+                cols="65"
+                spellCheck="false"
                 placeholder="Describe your service"
               ></textarea>
             </li>
-
-            <li>
-              <input type="file" name="file" />
-            </li>
           </ul>
         </fieldset>
-        <button type="submit" value="submit">
-          Add Service
-        </button>
+
+        <div className="input-button-newServicePage">
+          <li className="li-newServicePage input-newServicePage">
+            <input type="file" name="file" />
+          </li>
+
+          <button
+            className="button-newServicePage"
+            type="submit"
+            value="submit"
+          >
+            Add Service
+          </button>
+        </div>
 
         {sending ? <p>Adding Service</p> : null}
 

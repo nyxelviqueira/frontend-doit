@@ -14,7 +14,7 @@ export const ServicePage = ({ reply, setReply }) => {
   const { service, loading, error, setService } = useService(id);
   const { user } = useContext(AuthContext);
 
-  if (loading) return <p>cargando UN SOLO servcicio....</p>;
+  if (loading) return <p>loading ONLY ONE service...</p>;
   if (error) return <ErrorMessage message={error} />;
 
   return (
@@ -33,6 +33,7 @@ export const ServicePage = ({ reply, setReply }) => {
       <GetReplies reply={reply} />
 
       {/* Si hay usuario registrado que se abra caja de comentarios */}
+
       {user ? (
         <NewReply reply={reply} setReply={setReply} />
       ) : (
