@@ -34,7 +34,7 @@ export const ModifyService = ({ service, setService }) => {
 
       const response = await editModifyService({ id, data, token });
 
-      console.log(response);
+
       if (response.realized) {
         setDisabled(true);
       }

@@ -5,7 +5,7 @@ import { Service } from "../service/Service";
 export const FilterServicesPage = () => {
   const { category } = useParams();
 
-  const { services, loading, error } = useServices();
+  const { services, /* loading, error */ } = useServices();
 
   const modifyStringCategory = category?.replaceAll("-", " ");
 
@@ -13,7 +13,7 @@ export const FilterServicesPage = () => {
     (s) => s.category.toLowerCase() === modifyStringCategory
   );
 
-  console.log("sira??:   ", filteredServicesByCategory);
+
 
   return filteredServicesByCategory.length ? (
     <ul>

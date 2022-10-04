@@ -11,7 +11,6 @@ import { Link } from "react-router-dom";
 
 export const ServicePage = ({ reply, setReply }) => {
   const { id } = useParams();
-  console.log(useParams());
   const { service, loading, error, setService } = useService(id);
   const { user } = useContext(AuthContext);
 

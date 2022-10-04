@@ -1,7 +1,7 @@
 import { Service } from "../service/Service";
 
 export const ServicesList = ({ services }) => {
-  console.log("todos los serviceios: ", services);
+ 
   return services.length ? (
     <ul className="services-list">
       {services.map((service) => {

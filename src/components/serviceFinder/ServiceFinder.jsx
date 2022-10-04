@@ -61,7 +61,7 @@ export const ServiceFinder = () => {
 
   const selectService = (service) => {
     setSelectedService(service);
-    console.log(service);
+
   };
   const onChange = (e, { newValue }) => {
     setValue(newValue);
