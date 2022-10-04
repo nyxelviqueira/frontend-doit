@@ -154,9 +154,9 @@ export const editModifyService = async ({ id, data, token }) => {
 
 //Llamadas de replies
 // xa poder enviar el reply
-export const sendRepliesService = async ({ idService, data, token }) => {
+export const sendRepliesService = async ({ id, data, token }) => {
   const response = await fetch(
-    `${process.env.REACT_APP_BACKEND}/services/${idService}`,
+    `${process.env.REACT_APP_BACKEND}/services/${id}`,
 
     {
       method: "POST",
@@ -171,7 +171,7 @@ export const sendRepliesService = async ({ idService, data, token }) => {
   if (!response.ok) {
     throw new Error(json.message);
   }
-  return json.data;
+  return json.reply;
 };
 
 // obtener los reply del back y pintarlos

@@ -4,6 +4,7 @@ import { ErrorMessage } from "../../components/errorMessage/ErrorMessage";
 import { UserServices } from "../../components/userServices/UserServices";
 import { editUserService } from "../../services";
 import avatarDefault from "../../../src/assets/avatar.png";
+import "../../components/components.css";
 
 export const MyUserPage = () => {
   const [error, setError] = useState("");
@@ -33,7 +34,6 @@ export const MyUserPage = () => {
           <h1>{user.user.username}</h1>
           {user.user.avatar ? (
             <img
-              //Hay veces que me funciona sin poner carpeta uploads y otras que tengo que ponerla
               src={`${process.env.REACT_APP_BACKEND}/${user.user.avatar}`}
               alt="avatar"
               width={100}
