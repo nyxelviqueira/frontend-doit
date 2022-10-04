@@ -4,6 +4,7 @@ import useServices from "../../hooks/useServices";
 import { Loading } from "../loading/Loading";
 import { ErrorMessage } from "../errorMessage/ErrorMessage";
 import { ServicesList } from "../../components/servicesList/ServicesList";
+import avatarDefault from "../../../src/assets/avatar.png";
 
 export const Profile = (filterServices) => {
   const { id } = useParams();
@@ -16,22 +17,50 @@ export const Profile = (filterServices) => {
   if (error) return <ErrorMessage message={error} />;
 
   return (
-    <section>
-      <h1>{user.username}</h1>
+    <>
+      <section className="profile">
+        <div className="avatarNameContainer">
+          <h1>{user.username}</h1>
+          {user.avatar ? (
+            <img
+              //Hay veces que me funciona sin poner carpeta uploads y otras que tengo que ponerla
+              src={`${process.env.REACT_APP_BACKEND}/${user.avatar}`}
+              alt="avatar"
+              width={100}
+              className="avatar"
+            />
+          ) : (
+            <img
+              src={avatarDefault}
+              alt="avatarDefault"
+              className="avatar"
+              width={100}
+            />
+          )}
+        </div>
+        <div className="biographyContainer">
+          {user.biography ? (
+            <>
+              <h2>Biography</h2>
+              <p>{user.biography}</p>
+            </>
+          ) : (
+            <div></div>
+          )}
+        </div>
+        <div className="emailContainer">
+          <h2>Email</h2>
+          <p>{user.email}</p>
+        </div>
+        <div className="cretedAt">
+          Created at: {new Date(user.createdAt).toLocaleString()}
+        </div>
+      </section>
 
-      {/* Por qué funciona así y no `${process.env.REACT_APP_BACKEND}/uploads/${user.avatar}` */}
-      <img
-        src={`${process.env.REACT_APP_BACKEND}/uploads/${user.avatar}`}
-        alt="avatar"
-        width={100}
-      />
-
-      <p>{user.biography}</p>
-      <p>{user.email}</p>
-      <div>{new Date(user.createdAt).toLocaleString()}</div>
-
-      {/* Me falta filtrar por id de usuario */}
-      <ServicesList services={filterServices} />
-    </section>
+      <section className="servicesCreated">
+        <h2>Services createds</h2>
+        <ServicesList services={filterServices} />
+      </section>
+    </>
   );
 };
