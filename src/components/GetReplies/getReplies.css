@@ -1,0 +1,52 @@
+.getReplies {
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  background-color: rgba(14, 29, 52, 0.9);
+  color: #fff;
+  border: 1px solid black;
+  gap: 2rem;
+  margin: 1.5rem;
+  justify-content: center;
+  text-align: center;
+}
+
+.reply {
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  background-color: rgba(14, 29, 52, 0.9);
+  color: #fff;
+  border: 1px solid black;
+  gap: 2rem;
+  margin: 1.5rem;
+  padding: 2rem;
+  align-items: center;
+}
+
+.reply a {
+  background-color: #0e1d34;
+  border: none;
+  color: white;
+  width: 25%;
+  padding: 0.4rem;
+  border-radius: 5px;
+  margin: 10px;
+  text-decoration: none;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  transition-duration: 0.4s;
+}
+
+.reply a:hover {
+  background-color: #305182;
+  color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 1.1em;
+}
+
+.reply p {
+  color: grey;
+  overflow: hidden;
+}

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { sendRepliesService } from "../../../src/services/index";
 import { useContext } from "react";
 import { AuthContext } from "../../../src/context/AuthContext";
+import "./newReply.css";
 
 export const NewReply = ({ id, setReplies }) => {
   const [error, setError] = useState("");
@@ -27,18 +28,18 @@ export const NewReply = ({ id, setReplies }) => {
   };
   return (
     <>
-      <section>
+      <section className="newReply">
         <form onSubmit={handleForm}>
           <fieldset>
             <legend>New Reply</legend>
             <ul>
               <li>
-                <label htmlFor="observations">Observations: </label>
+                <label htmlFor="observations"></label>
                 <textarea
                   name="observations"
                   id="observations"
-                  rows="10"
-                  cols="80"
+                  rows="8"
+                  cols="40"
                   placeholder="Insert a new observation"
                   autoFocus
                   required
@@ -46,11 +47,12 @@ export const NewReply = ({ id, setReplies }) => {
               </li>
 
               <li>
-                <input type="file" name="finalFile" />
+              <label htmlFor="finalFile">Select a file: </label>
+                <input type="file" name="finalFile" id="finalFile" />
               </li>
             </ul>
           </fieldset>
-          <button type="submit" value="submit">
+          <button type="submit" value="submit" className="sendButton">
             Send
           </button>
 

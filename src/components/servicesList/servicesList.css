@@ -1,0 +1,30 @@
+/* VERSIÓN MÓVIL */
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 1rem;
+  max-width: fit-content;
+}
+
+/* VERSIÓN TABLET */
+@media (min-width: 700px) {
+  .services-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(25%);
+    gap: 2rem;
+    margin: 2rem;
+  }
+}
+
+/* VERSIÓN PC */
+@media (min-width: 1025px) {
+  .services-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(25%);
+    gap: 2rem;
+    margin: 2rem;
+  }
+}

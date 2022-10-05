@@ -1,0 +1,43 @@
+/* VERSIÓN MÓVIL */
+
+.modal {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(14, 29, 52, 0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container {
+  display: flex;
+  position: relative;
+  max-width: 29rem;
+  max-height: 30rem;
+  background-color: #fff;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.modal.is-open {
+  display: flex;
+}
+
+/* VERSIÓN TABLET */
+@media (min-width: 700px) {
+}
+
+/* VERSIÓN PC */
+@media (min-width: 1025px) {
+  .modal.is-open {
+    display: flex;
+  }
+}

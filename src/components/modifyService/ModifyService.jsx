@@ -6,6 +6,8 @@ import { ErrorMessage } from "../../components/errorMessage/ErrorMessage";
 
 import { AuthContext } from "../../context/AuthContext";
 import { editModifyService } from "../../services";
+import useModal from "../../hooks/useModal";
+import Modal from "../modal/Modal";
 
 export const ModifyService = ({ service, setService }) => {
   const [error, setError] = useState("");
@@ -16,6 +18,7 @@ export const ModifyService = ({ service, setService }) => {
   const [category, setCategory] = useState(service.category);
   const [realized, setRealized] = useState(Boolean(service.realized));
   const [disabled, setDisabled] = useState(Boolean(service.disabled));
+  const [isOpenModal, openModal, closeModal] = useModal(false);
 
   const handleForm = async (e) => {
     e.preventDefault();
@@ -34,7 +37,6 @@ export const ModifyService = ({ service, setService }) => {
 
       const response = await editModifyService({ id, data, token });
 
-
       if (response.realized) {
         setDisabled(true);
       }
@@ -47,76 +49,82 @@ export const ModifyService = ({ service, setService }) => {
 
   return service ? (
     <>
+      <button className="openButton" onClick={openModal}>
+        Edit service
+      </button>
       <section>
-        <form onSubmit={handleForm} action="#">
-          <fieldset>
-            <legend>Modify your Service</legend>
-            <ul>
-              <li>
-                <label htmlFor="category">Change Category</label>
-                <select
-                  name="category"
-                  id="category"
-                  value={category}
-                  onChange={(e) => setCategory(e.target.value)}
-                >
-                  <option value="Programming and Development">
-                    Programming and Development
-                  </option>
-                  <option value="Design and art">Design and art</option>
-                  <option value="Music and Audio">Music and Audio</option>
-                  <option value="Video and Animation">
-                    Video and Animation
-                  </option>
-                  <option value="Writing and Translation">
-                    Writing and Translation
-                  </option>
-                  <option value="Administrative and Secretary">
-                    Administrative and Secretary
-                  </option>
-                  <option value="Digital Marketing">Digital Marketing</option>
-                  <option value="Business">Business</option>
-                  <option value="Various">Various</option>
-                </select>
-              </li>
+        <Modal isOpen={isOpenModal} closeModal={closeModal}>
+          <form onSubmit={handleForm} action="#" className="editService">
+            <fieldset>
+              <legend>Modify your Service</legend>
+              <ul>
+                <li>
+                  <label htmlFor="category">Change Category</label>
+                  <select
+                    name="category"
+                    id="category"
+                    value={category}
+                    onChange={(e) => setCategory(e.target.value)}
+                  >
+                    <option value="Programming and Development">
+                      Programming and Development
+                    </option>
+                    <option value="Design and art">Design and art</option>
+                    <option value="Music and Audio">Music and Audio</option>
+                    <option value="Video and Animation">
+                      Video and Animation
+                    </option>
+                    <option value="Writing and Translation">
+                      Writing and Translation
+                    </option>
+                    <option value="Administrative and Secretary">
+                      Administrative and Secretary
+                    </option>
+                    <option value="Digital Marketing">Digital Marketing</option>
+                    <option value="Business">Business</option>
+                    <option value="Various">Various</option>
+                  </select>
+                </li>
 
-              <li>
-                <label htmlFor="descriptionService">Edit Description:</label>
-                <textarea
-                  name="description"
-                  id="descriptionService"
-                  rows="10"
-                  cols="80"
-                  placeholder="Describe your service"
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                ></textarea>
-              </li>
+                <li>
+                  <label htmlFor="descriptionService">Edit Description:</label>
+                  <textarea
+                    name="description"
+                    id="descriptionService"
+                    rows="8"
+                    cols="40"
+                    className="textarea-editService"
+                    placeholder="Describe your service"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                  ></textarea>
+                </li>
 
-              <li>
-                <label htmlFor="realized">The service it's done?</label>
-                <br />
-                <input
-                  type="checkbox"
-                  name="realized"
-                  disabled={disabled}
-                  checked={realized}
-                  onChange={(e) => {
-                    setRealized(e.target.checked);
-                  }}
-                />
-                Done
-              </li>
-            </ul>
-          </fieldset>
-          <button type="submit" value="submit">
-            Modify Service !!!!!
-          </button>
+                <li>
+                  <label htmlFor="realized">The service it's done?</label>
+                  <br />
+                  <input
+                    type="checkbox"
+                    name="realized"
+                    disabled={disabled}
+                    checked={realized}
+                    onChange={(e) => {
+                      setRealized(e.target.checked);
+                    }}
+                  />
+                  Done
+                </li>
+              </ul>
+            </fieldset>
+            <button type="submit" value="submit" className="setChanges">
+              Modify Service !!!!!
+            </button>
 
-          {sending ? <p>Apply Changes</p> : null}
+            {sending ? <p>Apply Changes</p> : null}
 
-          {error ? <p>{error}</p> : null}
-        </form>
+            {error ? <p>{error}</p> : null}
+          </form>
+        </Modal>
       </section>
     </>
   ) : (

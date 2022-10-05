@@ -1,5 +1,5 @@
 import { Profile } from "../../components/profile/Profile"
-import "../../components/components.css";
+import "./styles/editUser.css";
 
 export const ProfilePage = () => {
     return (

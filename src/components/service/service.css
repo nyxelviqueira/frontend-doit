@@ -1,6 +1,4 @@
-*{
-  
-}
+
 /*Versión MVL*/
 .service-container-container {
     margin: 0;
@@ -37,7 +35,7 @@
   
 }
 .service-container:hover {
-    background-position: 0 100%;
+  background-position: 0 100%;
 }
 .service-title {
     color: #444;
@@ -56,20 +54,15 @@
     
 }
 
-
 .service-description {
-
-  color: #575a7b; 
+  color: #575a7b;
   font-size: 15px;
   line-height: 1.6;
   letter-spacing: 0.03em;
 }
 
-
 .service-realized {
-
 }
-
 
 .service-file-link {
 
@@ -84,18 +77,14 @@ gap: 0.5rem;
 
 /* VERSIÓN TABLET */
 @media (min-width: 700px) {
-    .service-container {
-
-     /*    margin: 0 1rem 0 1rem;
+  .service-container {
+    /*    margin: 0 1rem 0 1rem;
         z-index: 20; */
+  }
+}
 
-    }
-    }
-  
 /* VERSIÓN PC */
 @media (min-width: 1025px) {
-   
-    .service-container {
-
-    }
-    }
+  .service-container {
+  }
+}
