@@ -4,7 +4,10 @@ import { ErrorMessage } from "../../components/errorMessage/ErrorMessage";
 import { UserServices } from "../../components/userServices/UserServices";
 import { editUserService } from "../../services";
 import avatarDefault from "../../../src/assets/avatar.png";
-import "../../components/components.css";
+
+import "./styles/editUser.css";
+import Modal from "../../components/modal/Modal";
+import useModal from "../../hooks/useModal";
 
 export const MyUserPage = () => {
   const [error, setError] = useState("");
@@ -12,6 +15,7 @@ export const MyUserPage = () => {
   const [biography, setBiography] = useState("");
   const [avatar, setAvatar] = useState("");
   const { user, token } = useContext(AuthContext);
+  const [isOpenModal, openModal, closeModal] = useModal(false);
 
   const handleForm = async (e) => {
     setError("");
@@ -31,21 +35,25 @@ export const MyUserPage = () => {
     <>
       <section className="profile">
         <div className="avatarNameContainer">
-          <h1>{user.user.username}</h1>
+          <h2>{user.user.username}</h2>
           {user.user.avatar ? (
             <img
               src={`${process.env.REACT_APP_BACKEND}/${user.user.avatar}`}
               alt="avatar"
               width={100}
+              className="avatar"
             />
           ) : (
             <img
               src={avatarDefault}
               alt="avatarDefault"
-              className="avatarDefault"
+              className="avatar"
               width={100}
             />
           )}
+          <button className="openButton" onClick={openModal}>
+            Edit user
+          </button>
         </div>
         <div className="biographyContainer">
           {user.user.biography ? (
@@ -61,44 +69,47 @@ export const MyUserPage = () => {
           <h2>Email</h2>
           <p>{user.user.email}</p>
         </div>
-        <div>Created at: {new Date(user.user.createdAt).toLocaleString()}</div>
+        <div className="cretedAtContainer">
+          <h2>Created at</h2>
+          <p>{new Date(user.user.createdAt).toLocaleString()}</p>
+        </div>
       </section>
 
       {/* Esta section va dentro de un popup al hacer onClick en Edit user */}
-      <section className="editUser">
-        <button>Edit user</button>
-
-        <form onSubmit={handleForm}>
-          <fieldset>
-            <legend>Set yout changes</legend>
-            <ul>
-              <li>
-                <label htmlFor="biography">Biography: </label>
-                <input
-                  type="text"
-                  name="biography"
-                  id="biography"
-                  value={biography}
-                  autoFocus
-                  required
-                  onChange={(e) => setBiography(e.target.value)}
-                />
-              </li>
-              <li>
-                <label>Avatar: </label>
-                <input
-                  type="file"
-                  name="avatar"
-                  value={avatar}
-                  onChange={(e) => setAvatar(e.target.value)}
-                />
-              </li>
-            </ul>
-          </fieldset>
-          <button>Actualiza tus cambios</button>
+      {/*  <section className="editUser"> */}
+      <Modal isOpen={isOpenModal} closeModal={closeModal}>
+        <form onSubmit={handleForm} className="editUser">
+          <ul className="ulForm">
+            <li className="liForm">
+              <label htmlFor="biography">Biography: </label>
+              <textarea
+                rows="8"
+                cols="40"
+                className="textarea-editUser"
+                name="biography"
+                id="biography"
+                value={biography}
+                autoFocus
+                required
+                onChange={(e) => setBiography(e.target.value)}
+              />
+            </li>
+            <li className="liForm">
+              <label>Avatar: </label>
+              <input
+                type="file"
+                name="avatar"
+                value={avatar}
+                onChange={(e) => setAvatar(e.target.value)}
+              />
+            </li>
+          </ul>
+          <button className="setChanges">Set your changes</button>
           {error ? <p>{error}</p> : null}
         </form>
-      </section>
+      </Modal>
+      {/* <button>Salir sin guardar</button> */}
+      {/*    </section> */}
 
       {user.user.id ? (
         <>

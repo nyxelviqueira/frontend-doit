@@ -5,7 +5,9 @@ import { ModifyService } from "../../components/modifyService/ModifyService";
 import { Replies } from "../../components/replies/Replies";
 import { Service } from "../../components/service/Service";
 import { AuthContext } from "../../context/AuthContext";
+
 import { useService } from "../../hooks/useService";
+import "./styles/servicePage.css";
 
 export const ServicePage = () => {
   const { id } = useParams();
@@ -17,7 +19,7 @@ export const ServicePage = () => {
 
   return (
     <section>
-      <Service service={service}/>
+      <Service service={service} />
 
       {/* Pongo que solo los usuarios registrados puedan editar sus servicios */}
 

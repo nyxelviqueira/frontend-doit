@@ -1,10 +1,10 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     outline: none;
 
-}
+} */
 .suggestion {
     padding-top:0.01rem;
 }
@@ -58,7 +58,9 @@
     flex-direction: column;
     position: relative;
 
+
 }
+
 
 /* para q nos funcione bottom: 0 en responsive mvl
 left: 20px esto hará q se coloque debajo del mvl  */
