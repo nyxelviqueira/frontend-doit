@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { sendNewReplyService } from "../../../src/services/index";
+import { sendRepliesService } from "../../../src/services/index";
 import { useContext } from "react";
 import { AuthContext } from "../../../src/context/AuthContext";
 
