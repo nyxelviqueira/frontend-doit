@@ -102,8 +102,13 @@ export const NewServicePage = ({ addService }) => {
         </fieldset>
 
         <div className="input-button-newServicePage">
-          <li className="li-newServicePage input-newServicePage">
-            <input type="file" name="file" />
+          <li className="li-newServicePage li-input-newServicePage">
+            <input
+              placeholder="Add File"
+              type="file"
+              name="file"
+              className="input-newServicePage"
+            />
           </li>
 
           <button

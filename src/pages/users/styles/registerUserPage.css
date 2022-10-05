@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+  }
+  .container-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+     background-color: #eee;
+  }
+  .container {
+    max-width: 500px;
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  }
+  .container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+  }
+  .container .title::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  }
+  .content form .details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+  }
+  form .details .input-box{
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+  }
+  form .input-box span.details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  .user-details .input-box input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+  }
+  .user-details .input-box input:focus,
+  .user-details .input-box input:valid{
+    border-color: #4a1a5e;
+  }
+ 
+   form .button-register{
+     height: 45px;
+     margin: 35px 0
+   }
+   form .button-register {
+    height: 100%;
+    width: 100%;
+    background-color: #0e1d34;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    
+    cursor: pointer;
+    transition: all 0.3s ease;
+   }
+
+   
+
+/* VERSIÓN TABLET */
+@media (min-width: 700px) {
+  
+  
+    .container-container{
+      height: 700px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      
+    }
+    .container {
+      max-width: 500px;
+      width: 100%;
+      background-color: #fff;
+      padding: 25px 30px;
+      border-radius: 5px;
+     
+    }
+  }
+  
+
+/* VERSIÓN PC */
+@media (min-width: 1025px) {
+  .container-container{
+    height: 100vh;
+    justify-content: center;
+    align-items: center;   
+  }
+  
+  .container {
+    max-width: 500px;
+    height: 500px;
+    border-radius: 5px;
+  }
+  .input-box {
+    margin-bottom: 5px;
+  }
+  
+
+}  

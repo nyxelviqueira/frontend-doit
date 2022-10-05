@@ -85,12 +85,15 @@ font-weight: bold;
 
 .input-button-newServicePage {
     margin: auto;
-
 }
-
 .input-newServicePage {
+    
+} 
+
+.li-input-newServicePage {
     display: inline-block;
     padding-right: 8.5rem;
+   
 }
 
 .button-newServicePage {

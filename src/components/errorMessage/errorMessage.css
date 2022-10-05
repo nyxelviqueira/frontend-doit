@@ -57,3 +57,6 @@
   transition: .3s;
 
 }
+.link-error::after {
+ 
+}

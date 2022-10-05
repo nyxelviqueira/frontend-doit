@@ -28,11 +28,11 @@ export const Service = ({ service }) => {
           href={`${process.env.REACT_APP_BACKEND}/${service.file}`}
           download
         >
-          Previsualizar archivo adjunto
+          Previw File
         </a>
 
         <p className="service-createdAt">
-          By <Link to={`/users/${service.idUser}`}>{service.username} </Link> on{" "}
+          By <Link to={`/users/${service.idUser}`}>{service.username}</Link>
           {new Date(service.createdAt).toLocaleString()}
         </p>
       </div>

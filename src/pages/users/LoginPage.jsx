@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { logInUserService } from "../../services";
+import "./styles/loginPage.css";
 
 export const LoginPage = () => {
   const navigate = useNavigate();
@@ -9,6 +10,12 @@ export const LoginPage = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const { login } = useContext(AuthContext);
+  const [passwordShown, setPasswordShown] = useState(false);
+
+  const tooglePassword = (e) => {
+    e.preventDefault();
+    setPasswordShown(!passwordShown);
+  };
 
   const handleForm = async (e) => {
     e.preventDefault();
@@ -25,44 +32,54 @@ export const LoginPage = () => {
   };
 
   return (
-    <>
-      <form onSubmit={handleForm}>
-        <fieldset>
-          <legend>Login</legend>
-          <ul>
-            <li>
-              <label htmlFor="email">Email:</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                required
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </li>
-            <li>
-              <label htmlFor="pass">Contraseña:</label>
-              <input
-                type="password"
-                name="password"
-                id="pass"
-                required
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <input
-                type="checkbox"
-                name="showPassword"
-                value="showPassword"
-                id="showPassword"
-              />
-              <label htmlFor="showPassword">Show password</label>
-              <button>Show Password</button>
-            </li>
-          </ul>
-        </fieldset>
-        <button type="submit">Login</button>
-        {error ? <p>{error}</p> : null}
-      </form>
-    </>
+    <div className="container-container">
+      <section className="container">
+        <div className="title">Login</div>
+
+        <div className="content">
+          <form onSubmit={handleForm} className="form-container">
+            <fieldset className="user-details">
+              <ul>
+                <li className="input-box">
+                  <label htmlFor="email" className="details">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    required
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </li>
+                <li className="input-box">
+                  <label htmlFor="pass" className="details">
+                    Password
+                  </label>
+                  <input
+                    name="password"
+                    id="pass"
+                    required
+                    type={passwordShown ? "text" : "password"}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </li>
+                <button
+                  onClick={tooglePassword}
+                  className="btn-login button-password"
+                >
+                  Show Password
+                </button>
+              </ul>
+            </fieldset>
+
+            <button className="btn-login button-login" type="submit">
+              Login
+            </button>
+            {error ? <p>{error}</p> : null}
+          </form>
+        </div>
+      </section>
+    </div>
   );
 };
