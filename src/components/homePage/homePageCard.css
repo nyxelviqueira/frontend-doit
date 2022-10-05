@@ -8,8 +8,9 @@
 
 .home-page-title {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   margin-top: 2rem;
+  color: rgba(14, 29, 52, 0.9);
 }
 .home-page-wrapper {
   display: flex;
@@ -66,7 +67,7 @@
 
 /* VERSIÓN TABLET */
 @media (min-width: 700px) {
-  .home-page-wrapper{
+  .home-page-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(25%);
@@ -117,8 +118,6 @@
     line-height: 1.7;
   }
 }
-
-
 
 /* VERSIÓN PC */
 @media (min-width: 1025px) {

@@ -1,0 +1,81 @@
+.link {
+  color: rgb(246, 234, 234);
+}
+
+.headerUsername {
+  float: right;
+  width: 5rem;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  text-decoration: none;
+  background-color: rgb(95, 158, 160);
+  opacity: 89%;
+  border-radius: 15%;
+}
+
+.logout {
+  color: rgb(246, 234, 234);
+  background-color: transparent;
+  padding: 0rem;
+}
+
+.header .newServiceButton {
+  color: rgb(246, 234, 234);
+  background-color: transparent;
+}
+
+.logged {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (min-width: 1025px) {
+  .link {
+    color: rgb(246, 234, 234);
+  }
+
+  .logged {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .auth {
+    color: rgb(246, 234, 234);
+    display: flex;
+    flex-direction: row;
+    font-size: 0.8rem;
+    gap: 1rem;
+    text-decoration: none;
+  }
+
+  .headerUsername {
+    float: right;
+    width: 5rem;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 1rem;
+    text-decoration: none;
+    background-color: rgb(95, 158, 160);
+    opacity: 89%;
+    border-radius: 15%;
+  }
+
+  .buttonsHeader {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .header .newServiceButton {
+    color: rgb(246, 234, 234);
+    background-color: transparent;
+    margin: 0 0 0 4rem;
+  }
+
+  .logout {
+    color: rgb(246, 234, 234);
+    background-color: transparent;
+    padding: 0rem;
+  }
+}
