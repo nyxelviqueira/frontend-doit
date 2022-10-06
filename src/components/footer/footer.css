@@ -1,11 +1,17 @@
-.footer {
-    font-size: 14px;
-    background-color: #0e1d34;
-    padding: 30px 15px 40px 35px;
-    color: white;
-  }
-  
-.footer .copyright {
-    text-align: center;
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  width: 100%;
+
+  bottom: 0;
+  font-size: 14px;
+  background-color: #0e1d34;
+  padding: 0.8rem;
+  color: white;
+  z-index: 999;
 }
-  
+
+footer p {
+  text-align: center;
+}
