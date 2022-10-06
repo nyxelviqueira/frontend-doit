@@ -20,7 +20,7 @@
   padding: 0rem;
 }
 
-.header .newServiceButton {
+header .newServiceButton {
   color: rgb(246, 234, 234);
   background-color: transparent;
 }
@@ -67,7 +67,7 @@
     gap: 0.5rem;
   }
 
-  .header .newServiceButton {
+  header .newServiceButton {
     color: rgb(246, 234, 234);
     background-color: transparent;
     margin: 0 0 0 4rem;

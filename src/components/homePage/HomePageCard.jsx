@@ -14,6 +14,11 @@ import { Link } from "react-router-dom";
 export const HomePageCards = ({ service }) => {
   return (
     <div className="home-page">
+      <p className="home-page-name">Welcome to Doit!</p>
+      <p className="home-page-description">
+        DoIt! Is an application where you can find all kind of services offered
+        by houndred of freelancer specialised in differents categories.
+      </p>
       <h1 className="home-page-title">CATEGORIES</h1>
 
       <div className="home-page-wrapper">
@@ -25,7 +30,7 @@ export const HomePageCards = ({ service }) => {
             </h2>
             <p className="home-page-card-content">
               You can find different developers specialised in different
-              programming languages that can help you to develop big projects.{" "}
+              programming languages that can help you to develop big projects.
             </p>
           </div>
         </Link>
