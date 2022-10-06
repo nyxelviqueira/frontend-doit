@@ -1,131 +1,78 @@
-/* - Very dark blue (main BG): hsl(217, 54%, 11%)
-- Very dark blue (card BG): hsl(216, 50%, 16%)
-- Very dark blue (line): hsl(215, 32%, 27%)
-- White: hsl(0, 0%, 100%) */
-
-a {
-  text-decoration: none;
-}
-
-
-
 header {
-  height: 5rem;
-  max-width: 100%;
-  display: flex;
+  padding: 0.5rem;
+  min-width: 100%;
   align-items: center;
   background-color: rgba(14, 29, 52, 0.9);
   position: sticky;
 }
 
-header.header .logo {
-  align-items: center;
-  padding: 0 0 0 0.5rem;
-  width: 3.5rem;
-}
-
-header.header .title {
-  float: left;
-  padding-right: -2rem;
+header .title {
   font-family: "Inter", sans-serif;
   color: #fff;
   text-decoration: none;
 }
 
-header.header nav {
+header .logo {
+  display: flex;
+  float: left;
+  align-items: center;
+  padding: 0 0 0 0.5rem;
+  width: 3.5rem;
+}
+
+header nav {
   gap: 2rem;
 }
 
-header.header .auth {
-  float: left;
-  color: rgb(246, 234, 234);
-  display: flex;
-  flex-direction: row;
-  font-size: 0.8rem;
-  gap: 1rem;
-  text-decoration: none;
-}
-
-header.header .logged {
-  display: grid;
-  gap: 0.4rem;
-}
-
-header.header .newServiceButton {
-  color: rgb(246, 234, 234);
-  background-color: rgba(14, 29, 52, 0.9);
-  border-radius: 30%;
-}
-
-.logout {
-  color: rgb(246, 234, 234);
-  background-color: rgba(14, 29, 52, 0.9);
-  border-radius: 30%;
-}
-
-.headerUsername {
-  font-size: 0.8rem;
-  text-decoration: underline;
-}
-
-.buttonsHeader {
-  display: flex;
-  gap: 0.5rem;
-  margin: 0 0.5rem 0 0;
-}
-/* esto afectaria a todos los links de todo el header: no se vale */
-
 .explore-services {
-  float: left;
   color: white;
   text-decoration: none;
-  font-size: 0.7rem;
+  
 }
-
-/* Aquí empieza el menú desplegable */
 
 .cont-nav {
   display: flex;
   align-items: center;
-  /*  position: absolute; */
+  justify-content: center;
 }
 
-.header li {
-  list-style: none;
-  cursor: pointer;
-  transition: 0.5s;
-}
 
-.header li:hover {
-  transition: 0.5s;
-}
+@media (min-width: 1025px) {
 
-.cont-services {
-  position: absolute;
-  display: none;
-}
-
-.cont-services > li {
-  border-bottom: solid 1px black;
-  text-align: center;
+header {
+  padding: 0.5rem;
+  min-width: 100%;
+  align-items: center;
   background-color: rgba(14, 29, 52, 0.9);
-  padding: 1rem;
-  width: 10rem;
-  transform: translateX(-25%);
-  transition: 0.5s;
+  position: sticky;
 }
 
-.cont-services > li:hover {
-  background-color: cadetblue;
-  transition: 0.5s;
+header .title {
+  font-family: "Inter", sans-serif;
+  color: #fff;
+  text-decoration: none;
 }
 
-.explore-services:hover > .cont-services {
-  display: block;
+header nav {
+  gap: 2rem;
 }
 
-@media (min-width: 500px) {
-  header.header {
-    justify-content: space-between;
-  }
+.explore-services {
+  color: white;
+  text-decoration: none;
+}
+
+.cont-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .logo {
+  display: flex;
+  float: left;
+  align-items: center;
+  padding: 0 0 0 0.5rem;
+  width: 3.5rem;
+}
 }

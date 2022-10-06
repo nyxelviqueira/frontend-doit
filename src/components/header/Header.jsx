@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
-    <header className="header">
+    <header>
       <nav className="cont-nav">
         <img src={icon} alt="Icono" className="logo" />
 

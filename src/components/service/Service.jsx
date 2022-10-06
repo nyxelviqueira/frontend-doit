@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 export const Service = ({ service }) => {
   let done;
-
   if (service.realized === 1) {
     done = "Done";
   } else {

@@ -27,7 +27,7 @@
   right: 1rem;
 }
 
-.modal.is-open {
+@media (min-width: 1025px) {.modal.is-open {
   display: flex;
 }
 
@@ -40,4 +40,5 @@
   .modal.is-open {
     display: flex;
   }
+}
 }
