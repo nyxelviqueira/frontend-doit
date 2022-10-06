@@ -5,21 +5,21 @@ export const Service = ({ service }) => {
   let done;
 
   if (service.realized === 1) {
-    done = "Done";
+    done = "Done!";
   } else {
-    done = "Not Done!";
+    done = "Not done yet";
   }
 
   return (
     <section className="service-container-container">
       <div className="service-container">
         <Link to={`/services/${service.id}`}>
-          <h3 className="service-title">{service.title}</h3>
+          <h1 className="service-title">{service.title}</h1>
+
+          <h3 className="service-category">{service.category}</h3>
+
+          <p className="service-description">{service.description}</p>
         </Link>
-
-        <h4 className="service-category">{service.category}</h4>
-
-        <p className="service-description">{service.description}</p>
 
         <h5 className="service-realized">{done}</h5>
 
@@ -28,11 +28,11 @@ export const Service = ({ service }) => {
           href={`${process.env.REACT_APP_BACKEND}/${service.file}`}
           download
         >
-          Previw File
+          preview file
         </a>
 
         <p className="service-createdAt">
-          By <Link to={`/users/${service.idUser}`}>{service.username}</Link>
+          By <Link to={`/users/${service.idUser}`}>{service.username} </Link> on{" "}
           {new Date(service.createdAt).toLocaleString()}
         </p>
       </div>

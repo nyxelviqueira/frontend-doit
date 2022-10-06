@@ -29,22 +29,18 @@ export const NewServicePage = ({ addService }) => {
     }
   };
   return (
-    <>
+    <div className="container-new">
       <form onSubmit={handleForm} action="#" className="form-newServicePage">
-        <fieldset className="fieldset-newServicePage">
-          <legend className="legend-newServicePage">
-            Create your new service
-          </legend>
-          <ul className="ul-newServicePage">
-            <li className="li-newServicePage title-newServicePage">
-              <label
-                htmlFor="titleService"
-                className="label-title-newServicePage"
-              >
+        {/* <fieldset className="fieldset-newServicePage"> */}
+        <legend className="legend-title">Create your new service</legend>
+        <ul>
+          <div className="row-new">
+            <div className="col-25-new">
+              <label htmlFor="titleService" className="label-newService">
                 Title
               </label>
               <input
-                className="input-title-newServicePage"
+                className="col-75-new input-title"
                 type="text"
                 name="title"
                 id="titleService"
@@ -53,69 +49,73 @@ export const NewServicePage = ({ addService }) => {
                 spellCheck="false"
                 required
               />
-            </li>
-            <li className="li-newServicePage">
-              <label
-                htmlFor="category"
-                className="label-category-newServicePage"
-              >
+            </div>
+          </div>
+
+          <div className="row-new">
+            <div className="col-25-new">
+              <label htmlFor="category" className="label-newService">
                 Choose category
               </label>
-              <select
-                name="category"
-                id="category"
-                className="select-option-category"
-              >
-                <option value="Programming and Development">
-                  Programming and Development
-                </option>
-                <option value="Design and art">Design and art</option>
-                <option value="Music and Audio">Music and Audio</option>
-                <option value="Video and Animation">Video and Animation</option>
-                <option value="Writing and Translation">
-                  Writing and Translation
-                </option>
-                <option value="Administrative and Secretary">
-                  Administrative and Secretary
-                </option>
-                <option value="Digital Marketing">Digital Marketing</option>
-                <option value="Business">Business</option>
-                <option value="Various">Various</option>
-              </select>
-            </li>
+              <div className="col-75-new">
+                <select
+                  name="category"
+                  id="category"
+                  className="select-cat-new"
+                >
+                  <option value="Programming and Development">
+                    Programming and Development
+                  </option>
+                  <option value="Design and art">Design and art</option>
+                  <option value="Music and Audio">Music and Audio</option>
+                  <option value="Video and Animation">
+                    Video and Animation
+                  </option>
+                  <option value="Writing and Translation">
+                    Writing and Translation
+                  </option>
+                  <option value="Administrative and Secretary">
+                    Administrative and Secretary
+                  </option>
+                  <option value="Digital Marketing">Digital Marketing</option>
+                  <option value="Business">Business</option>
+                  <option value="Various">Various</option>
+                </select>
+              </div>
+            </div>
+          </div>
 
-            <li className="li-newServicePage">
-              <label htmlFor="descriptionService">
-                <p className="label-p">Describe your service</p>
+          <div className="row-new">
+            <div className="col-25-new">
+              <label htmlFor="descriptionService" className="label-newService">
+                Describe your service
               </label>
-              <textarea
-                className="textarea-newServicePage"
-                name="description"
-                id="descriptionService"
-                rows="10"
-                cols="65"
-                spellCheck="false"
-                placeholder="Describe your service"
-              ></textarea>
-            </li>
-          </ul>
-        </fieldset>
+              <div className="col-75-new">
+                <textarea
+                  className="textarea-new"
+                  name="description"
+                  id="descriptionService"
+                  rows="10"
+                  cols="65"
+                  spellCheck="false"
+                  placeholder="Describe your service"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </ul>
+        {/* </fieldset> */}
 
-        <div className="input-button-newServicePage">
-          <li className="li-newServicePage li-input-newServicePage">
-            <input
-              placeholder="Add File"
-              type="file"
-              name="file"
-              className="input-newServicePage"
-            />
-          </li>
-
-          <button
-            className="button-newServicePage"
-            type="submit"
-            value="submit"
-          >
+        <div className="row-new">
+          <input
+            placeholder="Add File"
+            type="file"
+            name="file"
+            className="input-new"
+          />
+        </div>
+        <div className="row-new">
+          <button className="btn-submit-new" type="submit" value="submit">
             Add Service
           </button>
         </div>
@@ -124,6 +124,6 @@ export const NewServicePage = ({ addService }) => {
 
         {error ? <p>{error}</p> : null}
       </form>
-    </>
+    </div>
   );
 };
