@@ -3,6 +3,7 @@ import useReplies from "../../hooks/useReplies";
 import { GetReplies } from "../GetReplies/GetReplies";
 import { NewReply } from "../newReply/NewReply";
 
+
 export const Replies = ({ id, user }) => {
   const { replies, setReplies, loading } = useReplies(id);
 

@@ -1,10 +1,11 @@
-/* ME QUEDO AQUÍ PARA LOS REPLIES, HICE UN NUEVO ENDPOINT */
+import "./getReplies.css";
+
 export const GetReplies = ({ replies }) => {
   return (
     <>
-      <ul>
+      <ul className="getReplies">
         {replies.map((reply) => (
-          <li key={reply.id}>
+          <li key={reply.id} className="reply">
             <h3>Reply by {reply.username}</h3>
             <p>{reply.observations}</p>
             {reply.finalFile ? (

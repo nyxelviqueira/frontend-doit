@@ -1,4 +1,4 @@
-/*Versión MVL*/
+/*MVL VERSION*/
 .home-page {
   width: 100%;
   margin-bottom: 5rem;
@@ -8,8 +8,10 @@
 
 .home-page-title {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   margin-top: 2rem;
+  color: rgba(14, 29, 52, 0.9);
+  text-decoration: underline;
 }
 .home-page-wrapper {
   display: flex;
@@ -64,9 +66,9 @@
   overflow: hidden;
 }
 
-/* VERSIÓN TABLET */
+/* TABLET VERSION*/
 @media (min-width: 700px) {
-  .home-page-wrapper{
+  .home-page-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(25%);
@@ -118,9 +120,7 @@
   }
 }
 
-
-
-/* VERSIÓN PC */
+/* PC VERSION*/
 @media (min-width: 1025px) {
   .home-page-wrapper {
     display: grid;

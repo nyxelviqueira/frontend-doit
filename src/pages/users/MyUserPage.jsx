@@ -4,7 +4,7 @@ import { ErrorMessage } from "../../components/errorMessage/ErrorMessage";
 import { UserServices } from "../../components/userServices/UserServices";
 import { editUserService } from "../../services";
 import avatarDefault from "../../../src/assets/avatar.png";
-import "../../components/components.css";
+import "./styles/editUser.css";
 
 export const MyUserPage = () => {
   const [error, setError] = useState("");
@@ -27,6 +27,8 @@ export const MyUserPage = () => {
     }
   };
 
+  const show = () => {};
+
   return user ? (
     <>
       <section className="profile">
@@ -37,15 +39,20 @@ export const MyUserPage = () => {
               src={`${process.env.REACT_APP_BACKEND}/${user.user.avatar}`}
               alt="avatar"
               width={100}
+              className="avatar"
             />
           ) : (
             <img
               src={avatarDefault}
               alt="avatarDefault"
-              className="avatarDefault"
+              className="avatar"
               width={100}
             />
           )}
+          <br></br>
+          <button className="open" onClick={() => show()}>
+            Edit user
+          </button>
         </div>
         <div className="biographyContainer">
           {user.user.biography ? (
@@ -65,40 +72,41 @@ export const MyUserPage = () => {
       </section>
 
       {/* Esta section va dentro de un popup al hacer onClick en Edit user */}
-      <section className="editUser">
-        <button>Edit user</button>
-
-        <form onSubmit={handleForm}>
-          <fieldset>
-            <legend>Set yout changes</legend>
-            <ul>
-              <li>
-                <label htmlFor="biography">Biography: </label>
-                <input
-                  type="text"
-                  name="biography"
-                  id="biography"
-                  value={biography}
-                  autoFocus
-                  required
-                  onChange={(e) => setBiography(e.target.value)}
-                />
-              </li>
-              <li>
-                <label>Avatar: </label>
-                <input
-                  type="file"
-                  name="avatar"
-                  value={avatar}
-                  onChange={(e) => setAvatar(e.target.value)}
-                />
-              </li>
-            </ul>
-          </fieldset>
-          <button>Actualiza tus cambios</button>
-          {error ? <p>{error}</p> : null}
-        </form>
-      </section>
+      <div className="editUser-container">
+        <section className="editUser">
+          <form onSubmit={handleForm} classname="editUserForm">
+            <fieldset>
+              <legend>Set yout changes</legend>
+              <ul className="ulForm">
+                <li className="liForm">
+                  <label htmlFor="biography">Biography: </label>
+                  <input
+                    type="text"
+                    name="biography"
+                    id="biography"
+                    value={biography}
+                    autoFocus
+                    required
+                    onChange={(e) => setBiography(e.target.value)}
+                  />
+                </li>
+                <li className="liForm">
+                  <label>Avatar: </label>
+                  <input
+                    type="file"
+                    name="avatar"
+                    value={avatar}
+                    onChange={(e) => setAvatar(e.target.value)}
+                  />
+                </li>
+              </ul>
+            </fieldset>
+            <button>Actualiza tus cambios</button>
+            {error ? <p>{error}</p> : null}
+          </form>
+          <button>Salir sin guardar</button>
+        </section>
+      </div>
 
       {user.user.id ? (
         <>

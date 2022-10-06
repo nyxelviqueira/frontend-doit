@@ -20,7 +20,7 @@ export const Profile = (filterServices) => {
     <>
       <section className="profile">
         <div className="avatarNameContainer">
-          <h1>{user.username}</h1>
+          <h2>{user.username}</h2>
           {user.avatar ? (
             <img
               //Hay veces que me funciona sin poner carpeta uploads y otras que tengo que ponerla
@@ -33,8 +33,8 @@ export const Profile = (filterServices) => {
             <img
               src={avatarDefault}
               alt="avatarDefault"
-              className="avatar"
               width={100}
+              className="avatar"
             />
           )}
         </div>
@@ -52,13 +52,14 @@ export const Profile = (filterServices) => {
           <h2>Email</h2>
           <p>{user.email}</p>
         </div>
-        <div className="cretedAt">
-          Created at: {new Date(user.createdAt).toLocaleString()}
+        <div className="cretedAtContainer">
+          <h2>Created at</h2>
+          <p>{new Date(user.createdAt).toLocaleString()}</p>
         </div>
       </section>
 
       <section className="servicesCreated">
-        <h2>Services createds</h2>
+        <h2>Created services</h2>
         <ServicesList services={filterServices} />
       </section>
     </>
