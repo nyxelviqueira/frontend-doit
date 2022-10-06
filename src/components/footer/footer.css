@@ -1,11 +1,13 @@
-.footer {
-    font-size: 14px;
-    background-color: #0e1d34;
-    padding: 30px 15px 40px 35px;
-    color: white;
-  }
-  
-.footer .copyright {
-    text-align: center;
+footer {
+  font-size: 14px;
+  background-color: #0e1d34;
+  padding: 30px 15px 40px 35px;
+  color: white;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 }
-  
+
+footer .copyright {
+  text-align: center;
+}
