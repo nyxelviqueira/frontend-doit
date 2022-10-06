@@ -57,6 +57,7 @@
   display: flex;
   flex-direction: column;
   margin: 2rem;
+  text-align: center;
 }
 
 /* VERSIÓN TABLET */
@@ -79,6 +80,7 @@
 
   .profile h2 {
     text-align: center;
+    font-size: 1.3em;
   }
   .profile p {
     text-align: center;
