@@ -3,19 +3,28 @@ import "./errorMessage.css";
 
 export const ErrorMessage = ({ message }) => {
   return (
-    <section className="error">
-      <div className="wrapper-error">
-        <h1 className="h1-error">Hmm...{message}</h1>
+    <section className="page-404">
+      <div className="container-404">
+        <div className="row-404">
+          <div className="col-sm-12 ">
+            <div className="col-sm-10 col-sm-offset-1  text-center">
+              <div className="four_zero_four_bg">
+                <h1 className="text-center">{message}</h1>
+              </div>
 
-        <p className="p-error">
-          It seems that you're lost in a perpetual black hole. Let us help guide
-          you out and get you back home.
-        </p>
+              <div className="contant_box_404">
+                <h3 className="h2">Look like you're lost</h3>
+
+                <p>the page you are looking for not avaible!</p>
+
+                <Link to={"/"} className="link_404">
+                  Back to Home Page
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <Link to={"/"} className="link-error">
-        <button className="button-error">Back to Home Page</button>
-      </Link>
     </section>
   );
 };
