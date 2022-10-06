@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { NewServiceButton } from "../newServiceButton/NewServiceButton";
-/* import "../header/Header"; */
 import "./auth.css";
 
 export const Auth = () => {
@@ -10,26 +9,29 @@ export const Auth = () => {
 
   return user ? (
     <ul className="logged">
-      <li className="li-link">
-        <Link to={`/users`}>{user.user.username}</Link>
-      </li>
-
-      <li className="li-link buttonsHeader">
+      <NewServiceButton />
+      <li className="buttonsHeader">
         <button className="logout" onClick={() => logout()}>
-          <Link to={"/login"}>Logout</Link>
+          <Link to={"/login"} className="link">
+            Logout
+          </Link>
         </button>
-        <li className="buttonsHeader">
-          <NewServiceButton />
-        </li>
+      </li>
+      <li className="headerUsername">
+        <Link className="link" to={`/users`}>
+          {user.user.username}
+        </Link>
       </li>
     </ul>
   ) : (
     <ul className="auth">
-      <li className="li-link buttonsHeader">
-        <Link to={"/register"}>Register</Link>
+      <li>
+        <Link to={"/register"} className="link">
+          Register
+        </Link>
       </li>
       <li>
-        <Link className="li-link buttonsHeader" to={"/login"}>
+        <Link to={"/login"} className="link">
           Login
         </Link>
       </li>

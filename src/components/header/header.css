@@ -3,28 +3,21 @@
 - Very dark blue (line): hsl(215, 32%, 27%)
 - White: hsl(0, 0%, 100%) */
 
-a {
-  text-decoration: none;
-}
-
-
-
-.header-header {
-  height: 5rem;
-  max-width: 100%;
-  display: flex;
+header {
+  padding: 0.5rem;
+  min-width: 100%;
   align-items: center;
   background-color: rgba(14, 29, 52, 0.9);
   position: sticky;
 }
 
-.header-header .logo {
+header .logo {
   align-items: center;
   padding: 0 0 0 0.5rem;
   width: 3.5rem;
 }
 
-.title-header {
+header .title {
   float: left;
   padding-right: -2rem;
   font-family: "Inter", sans-serif;
@@ -32,54 +25,16 @@ a {
   text-decoration: none;
 }
 
-.cont-nav {
+header nav {
   gap: 2rem;
 }
 
-/* header.header .auth {
-  float: left;
-  color: rgb(246, 234, 234);
-  display: flex;
-  flex-direction: row;
-  font-size: 0.8rem;
-  gap: 1rem;
-  text-decoration: none;
-} */
-
-/* header.header .logged {
-  display: grid;
-  gap: 0.4rem;
-} */
-
-header.header .newServiceButton {
-  color: rgb(246, 234, 234);
-  background-color: transparent;
-  border-radius: 30%;
-}
-
-.logout {
-  color: rgb(246, 234, 234);
-  background-color: rgba(14, 29, 52, 0.9);
-  border-radius: 30%;
-}
-
-.headerUsername {
-  font-size: 0.8rem;
-  text-decoration: underline;
-}
-
-.buttonsHeader {
-  display: flex;
-  gap: 0.5rem;
-  margin: 0 0.5rem 0 0;
-}
 /* esto afectaria a todos los links de todo el header: no se vale */
 
 .explore-services {
-  float: left;
-  color: white;
+  color: rgb(246, 234, 234);
   text-decoration: none;
-  font-size: 0.7rem;
+  text-align: center;
 }
 
 /* Aquí empieza el menú desplegable */
@@ -87,45 +42,55 @@ header.header .newServiceButton {
 .cont-nav {
   display: flex;
   align-items: center;
-  /*  position: absolute; */
-}
-
-.header li {
-  list-style: none;
-  cursor: pointer;
-  transition: 0.5s;
-}
-
-.header li:hover {
-  transition: 0.5s;
-}
-
-.cont-services {
-  position: absolute;
-  display: none;
-}
-
-.cont-services > li {
-  border-bottom: solid 1px black;
+  justify-content: center;
   text-align: center;
-  background-color: rgba(14, 29, 52, 0.9);
-  padding: 1rem;
-  width: 10rem;
-  transform: translateX(-25%);
-  transition: 0.5s;
 }
 
-.cont-services > li:hover {
-  background-color: cadetblue;
-  transition: 0.5s;
-}
+/*  version TABLET */
 
-.explore-services:hover > .cont-services {
-  display: block;
-}
+/*  version PC */
 
-@media (min-width: 500px) {
-  header.header {
-    justify-content: space-between;
+@media (min-width: 1025px) {
+  header {
+    padding: 0.5rem;
+    min-width: 100%;
+    align-items: center;
+    background-color: rgba(14, 29, 52, 0.9);
+    position: sticky;
+  }
+
+  header .logo {
+    align-items: center;
+    padding: 0 0 0 0.5rem;
+    width: 3.5rem;
+  }
+
+  header .title {
+    float: left;
+    padding-right: -2rem;
+    font-family: "Inter", sans-serif;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  header nav {
+    gap: 2rem;
+  }
+
+  /* esto afectaria a todos los links de todo el header: no se vale */
+
+  .explore-services {
+    color: rgb(246, 234, 234);
+    text-decoration: none;
+  }
+
+  /* Aquí empieza el menú desplegable */
+
+  .cont-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /*  position: absolute; */
   }
 }
