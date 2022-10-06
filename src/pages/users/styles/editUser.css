@@ -59,8 +59,6 @@
   margin: 2rem;
 }
 
-
-
 /* VERSIÓN TABLET */
 @media (min-width: 700px) {
   .profile {
@@ -92,7 +90,6 @@
   .servicesCreated {
     display: flex;
   }
-
 
   /*   .servicesCreated .services-list {
     display: grid;
