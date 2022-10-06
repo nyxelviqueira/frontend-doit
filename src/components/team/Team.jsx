@@ -19,7 +19,7 @@ export const Team = () => {
         <div className="team-wrap">
           <div className="team-member">
             <div className="team-img">
-              <img className="ramon" src={ramon} alt="Ramón" />
+              <img className="ramon" src={ramon} alt="Ramón" width={200} />
               <div className="overlay">
                 <div className="team-details">
                   <p className="text-social">
@@ -41,14 +41,14 @@ export const Team = () => {
                 </div>
               </div>
             </div>
-            <h6 className="team-title">Ramón Viqueira</h6>
+            <h6 className="team-title">RAMÓN VIQUEIRA</h6>
           </div>
         </div>
 
         <div className="team-wrap">
           <div className="team-member">
             <div className="team-img">
-              <img className="paula" src={paula} alt="Paula" />
+              <img className="paula" src={paula} alt="Paula" width={200} />
               <div className="overlay">
                 <div className="team-details">
                   <p className="text-social">
@@ -70,14 +70,19 @@ export const Team = () => {
                 </div>
               </div>
             </div>
-            <h6 className="team-title">Paula Iglesias</h6>
+            <h6 className="team-title">PAULA IGLESIAS</h6>
           </div>
         </div>
 
         <div className="team-wrap">
           <div className="team-member">
             <div className="team-img">
-              <img className="adriana" src={adriana} alt="Adriana" />
+              <img
+                className="adriana"
+                src={adriana}
+                alt="Adriana"
+                width={200}
+              />
               <div className="overlay">
                 <div className="team-details">
                   <p className="text-social">
@@ -99,7 +104,7 @@ export const Team = () => {
                 </div>
               </div>
             </div>
-            <h6 className="team-title">Adriana Martínez</h6>
+            <h6 className="team-title">ADRIANA MARTÍNEZ</h6>
           </div>
         </div>
       </div>

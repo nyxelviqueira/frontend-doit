@@ -13,10 +13,14 @@ export const ListServicesPage = () => {
 
   return user ? (
     <>
+      <h1>All Services</h1>
       <NewServiceButton />
       <ServicesList services={services} />
     </>
   ) : (
-    <ServicesList services={services} />
+    <>
+      <h1>All Services</h1>
+      <ServicesList services={services} />
+    </>
   );
 };

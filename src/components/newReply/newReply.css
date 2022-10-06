@@ -8,6 +8,7 @@
   margin: 1.5rem;
   justify-content: center;
   text-align: center;
+  margin-bottom: 5rem;
 }
 
 .sendButton {
@@ -29,6 +30,6 @@
 }
 
 .sendButton:hover {
-    background-color: #305182;
-    color: white;
-  }
+  background-color: #305182;
+  color: white;
+}

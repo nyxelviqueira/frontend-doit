@@ -59,7 +59,7 @@ export const Profile = (filterServices) => {
       </section>
 
       <section className="servicesCreated">
-        <h2>Services createds</h2>
+        <h2>Created services</h2>
         <ServicesList services={filterServices} />
       </section>
     </>

@@ -11,7 +11,7 @@ import useModal from "../../hooks/useModal";
 
 export const MyUserPage = () => {
   const [error, setError] = useState("");
-  /* const navigate = useNavigate(); */
+
   const [biography, setBiography] = useState("");
   const [avatar, setAvatar] = useState("");
   const { user, token } = useContext(AuthContext);
@@ -24,8 +24,6 @@ export const MyUserPage = () => {
       const data = new FormData(e.target);
       await editUserService({ data, token });
       e.target.reset();
-
-      /* navigate("/"); */
     } catch (error) {
       setError(error.message);
     }
@@ -75,8 +73,6 @@ export const MyUserPage = () => {
         </div>
       </section>
 
-      {/* Esta section va dentro de un popup al hacer onClick en Edit user */}
-      {/*  <section className="editUser"> */}
       <Modal isOpen={isOpenModal} closeModal={closeModal}>
         <form onSubmit={handleForm} className="editUser">
           <ul className="ulForm">
@@ -114,7 +110,7 @@ export const MyUserPage = () => {
       {user.user.id ? (
         <>
           <section className="servicesCreated">
-            <h2>Services createds</h2>
+            <h2>Created services</h2>
             <UserServices />
           </section>
         </>
