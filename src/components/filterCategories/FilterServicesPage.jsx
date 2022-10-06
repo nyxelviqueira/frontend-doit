@@ -20,6 +20,6 @@ export const FilterServicesPage = () => {
       })}
     </ul>
   ) : (
-    <p>There are not services created</p>
+    <p>There are not created services</p>
   );
 };

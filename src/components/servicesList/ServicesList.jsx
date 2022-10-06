@@ -10,6 +10,6 @@ export const ServicesList = ({ services }) => {
       })}
     </ul>
   ) : (
-    <p>There are not services created</p>
+    <p>There are not created services</p>
   );
 };
