@@ -1,0 +1,15 @@
+.li-link  {
+    color: aliceblue;
+    text-decoration: none;
+    background-color: aliceblue;
+}
+
+a {
+    text-decoration: none;
+  }
+
+  .buttonsHeader {
+    display: flex;
+    color: white;
+    background-color: transparent;
+  }

@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
-    <header className="header">
+    <header className="header-header">
       <nav className="cont-nav">
         <img src={icon} alt="Icono" className="logo" />
 
         <Link to={"/"}>
-          <h1 className="title">DoIt!</h1>
+          <h1 className="title-header">DoIt!</h1>
         </Link>
 
         <Link to={`/services`}>

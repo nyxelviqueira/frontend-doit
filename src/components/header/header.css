@@ -9,7 +9,7 @@ a {
 
 
 
-header {
+.header-header {
   height: 5rem;
   max-width: 100%;
   display: flex;
@@ -18,13 +18,13 @@ header {
   position: sticky;
 }
 
-header.header .logo {
+.header-header .logo {
   align-items: center;
   padding: 0 0 0 0.5rem;
   width: 3.5rem;
 }
 
-header.header .title {
+.title-header {
   float: left;
   padding-right: -2rem;
   font-family: "Inter", sans-serif;
@@ -32,11 +32,11 @@ header.header .title {
   text-decoration: none;
 }
 
-header.header nav {
+.cont-nav {
   gap: 2rem;
 }
 
-header.header .auth {
+/* header.header .auth {
   float: left;
   color: rgb(246, 234, 234);
   display: flex;
@@ -44,16 +44,16 @@ header.header .auth {
   font-size: 0.8rem;
   gap: 1rem;
   text-decoration: none;
-}
+} */
 
-header.header .logged {
+/* header.header .logged {
   display: grid;
   gap: 0.4rem;
-}
+} */
 
 header.header .newServiceButton {
   color: rgb(246, 234, 234);
-  background-color: rgba(14, 29, 52, 0.9);
+  background-color: transparent;
   border-radius: 30%;
 }
 
