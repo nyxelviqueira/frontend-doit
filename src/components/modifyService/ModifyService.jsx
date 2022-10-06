@@ -49,7 +49,7 @@ export const ModifyService = ({ service, setService }) => {
 
   return service ? (
     <>
-      <button className="openButton" onClick={openModal}>
+      <button className="openButtonEdit" onClick={openModal}>
         Edit service
       </button>
       <section>

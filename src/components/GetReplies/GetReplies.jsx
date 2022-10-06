@@ -13,7 +13,7 @@ export const GetReplies = ({ replies }) => {
                 Previsualizar archivo adjunto
               </a>
             ) : (
-              "No hay archivos que mostrar"
+              <p className="not-files">Not files to show</p>
             )}
             <p>Reply added on {new Date(reply.createdAt).toLocaleString()}</p>
           </li>

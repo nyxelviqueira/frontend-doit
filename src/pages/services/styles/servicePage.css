@@ -8,16 +8,9 @@
   padding: 0 1.4rem 0 1.4rem;
   margin: 0.8rem 0 0 0;
 }
+
 .editService {
-  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-    sans-serif;
-  background-color: rgba(14, 29, 52, 0.9);
-  color: #fff;
-  border: 1px solid black;
-  gap: 2rem;
-  margin: 1.5rem;
-  justify-content: center;
-  text-align: center;
+  background-color: red;
 }
 
 .setChanges {
@@ -46,4 +39,3 @@
 .textarea-editService {
   background-color: rgb(239, 239, 239);
 }
-

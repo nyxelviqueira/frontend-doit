@@ -1,5 +1,15 @@
 /* VERSIÓN MÓVIL */
 
+.openButton {
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding: 1rem 1rem;
+  color: #ffff;
+  border-radius: 0.8rem;
+  text-decoration: none;
+  background: linear-gradient(135deg, #13496d, #512264);
+}
+
 .modal {
   position: fixed;
   z-index: 999;
@@ -27,18 +37,19 @@
   right: 1rem;
 }
 
-@media (min-width: 1025px) {.modal.is-open {
-  display: flex;
-}
-
-/* VERSIÓN TABLET */
-@media (min-width: 700px) {
-}
-
-/* VERSIÓN PC */
 @media (min-width: 1025px) {
   .modal.is-open {
     display: flex;
   }
-}
+
+  /* VERSIÓN TABLET */
+  @media (min-width: 700px) {
+  }
+
+  /* VERSIÓN PC */
+  @media (min-width: 1025px) {
+    .modal.is-open {
+      display: flex;
+    }
+  }
 }

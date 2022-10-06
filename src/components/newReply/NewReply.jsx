@@ -30,8 +30,8 @@ export const NewReply = ({ id, setReplies }) => {
     <>
       <section className="newReply">
         <form onSubmit={handleForm}>
+          <h3 className="button-new-reply">New Reply</h3>
           <fieldset>
-            <legend>New Reply</legend>
             <ul>
               <li>
                 <label htmlFor="observations"></label>
@@ -47,7 +47,7 @@ export const NewReply = ({ id, setReplies }) => {
               </li>
 
               <li>
-              <label htmlFor="finalFile">Select a file: </label>
+                <label htmlFor="finalFile">Select a file: </label>
                 <input type="file" name="finalFile" id="finalFile" />
               </li>
             </ul>

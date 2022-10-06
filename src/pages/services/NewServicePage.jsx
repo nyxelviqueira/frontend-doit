@@ -3,6 +3,7 @@ import { sendNewService } from "../../../src/services/index";
 import { useContext } from "react";
 import { AuthContext } from "../../../src/context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import "./styles/newServicePage.css";
 
 export const NewServicePage = ({ addService }) => {
   const [error, setError] = useState("");
@@ -28,67 +29,101 @@ export const NewServicePage = ({ addService }) => {
     }
   };
   return (
-    <>
-      <form onSubmit={handleForm} action="#">
-        <fieldset>
-          <legend>New Service</legend>
-          <ul>
-            <li>
-              <label htmlFor="titleService">Title: </label>
+    <div className="container-new">
+      <form onSubmit={handleForm} action="#" className="form-newServicePage">
+        {/* <fieldset className="fieldset-newServicePage"> */}
+        <legend className="legend-title">Create your new service</legend>
+        <ul>
+          <div className="row-new">
+            <div className="col-25-new">
+              <label htmlFor="titleService" className="label-newService">
+                Title
+              </label>
               <input
+                className="col-75-new input-title"
                 type="text"
                 name="title"
                 id="titleService"
                 placeholder="Name your service"
                 autoFocus
+                spellCheck="false"
                 required
               />
-            </li>
-            <li>
-              <label htmlFor="category">Category</label>
-              <select name="category" id="category">
-                <option value="Programming and Development">
-                  Programming and Development
-                </option>
-                <option value="Design and art">Design and art</option>
-                <option value="Music and Audio">Music and Audio</option>
-                <option value="Video and Animation">Video and Animation</option>
-                <option value="Writing and Translation">
-                  Writing and Translation
-                </option>
-                <option value="Administrative and Secretary">
-                  Administrative and Secretary
-                </option>
-                <option value="Digital Marketing">Digital Marketing</option>
-                <option value="Business">Business</option>
-                <option value="Various">Various</option>
-              </select>
-            </li>
+            </div>
+          </div>
 
-            <li>
-              <label htmlFor="descriptionService">Description:</label>
-              <textarea
-                name="description"
-                id="descriptionService"
-                rows="10"
-                cols="80"
-                placeholder="Describe your service"
-              ></textarea>
-            </li>
+          <div className="row-new">
+            <div className="col-25-new">
+              <label htmlFor="category" className="label-newService">
+                Choose category
+              </label>
+              <div className="col-75-new">
+                <select
+                  name="category"
+                  id="category"
+                  className="select-cat-new"
+                >
+                  <option value="Programming and Development">
+                    Programming and Development
+                  </option>
+                  <option value="Design and art">Design and art</option>
+                  <option value="Music and Audio">Music and Audio</option>
+                  <option value="Video and Animation">
+                    Video and Animation
+                  </option>
+                  <option value="Writing and Translation">
+                    Writing and Translation
+                  </option>
+                  <option value="Administrative and Secretary">
+                    Administrative and Secretary
+                  </option>
+                  <option value="Digital Marketing">Digital Marketing</option>
+                  <option value="Business">Business</option>
+                  <option value="Various">Various</option>
+                </select>
+              </div>
+            </div>
+          </div>
 
-            <li>
-              <input type="file" name="file" />
-            </li>
-          </ul>
-        </fieldset>
-        <button type="submit" value="submit">
-          Add Service
-        </button>
+          <div className="row-new">
+            <div className="col-25-new">
+              <label htmlFor="descriptionService" className="label-newService">
+                Describe your service
+              </label>
+              <div className="col-75-new">
+                <textarea
+                  className="textarea-new"
+                  name="description"
+                  id="descriptionService"
+                  rows="10"
+                  cols="65"
+                  spellCheck="false"
+                  placeholder="Describe your service"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </ul>
+        {/* </fieldset> */}
+
+        <div className="row-new">
+          <input
+            placeholder="Add File"
+            type="file"
+            name="file"
+            className="input-new"
+          />
+        </div>
+        <div className="row-new">
+          <button className="btn-submit-new" type="submit" value="submit">
+            Add Service
+          </button>
+        </div>
 
         {sending ? <p>Adding Service</p> : null}
 
         {error ? <p>{error}</p> : null}
       </form>
-    </>
+    </div>
   );
 };

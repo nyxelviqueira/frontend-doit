@@ -4,11 +4,17 @@
   background-color: rgba(14, 29, 52, 0.9);
   color: #fff;
   border: 1px solid black;
-  gap: 2rem;
+  gap: 5rem;
   margin: 1.5rem;
+  padding: 1rem;
+  border-radius: 0.8rem;
   justify-content: center;
   text-align: center;
   margin-bottom: 5rem;
+}
+
+.button-new-reply {
+  margin-bottom: 1rem;
 }
 
 .sendButton {

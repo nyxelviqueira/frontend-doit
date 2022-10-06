@@ -12,7 +12,7 @@ export const ServicePage = () => {
   const { service, loading, error, setService } = useService(id);
   const { user } = useContext(AuthContext);
 
-  if (loading) return <p>cargando UN SOLO servcicio....</p>;
+  if (loading) return <p>Loading a service</p>;
   if (error) return <ErrorMessage message={error} />;
 
   return (

@@ -17,7 +17,10 @@ export const HomePageCards = ({ service }) => {
       <h1 className="home-page-title">CATEGORIES</h1>
 
       <div className="home-page-wrapper">
-        <Link to={`/services/category/programming-and-development`}>
+        <Link
+          to={`/services/category/programming-and-development`}
+          className="home-card-link"
+        >
           <div className="home-page-card">
             <img src={devs} alt="devs" />
             <h2 className="home-page-card-title">
@@ -25,7 +28,7 @@ export const HomePageCards = ({ service }) => {
             </h2>
             <p className="home-page-card-content">
               You can find different developers specialised in different
-              programming languages that can help you to develop big projects.{" "}
+              programming languages that can help you to develop big projects.
             </p>
           </div>
         </Link>

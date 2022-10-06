@@ -104,8 +104,6 @@ export const MyUserPage = () => {
           {error ? <p>{error}</p> : null}
         </form>
       </Modal>
-      {/* <button>Salir sin guardar</button> */}
-      {/*    </section> */}
 
       {user.user.id ? (
         <>
@@ -115,7 +113,7 @@ export const MyUserPage = () => {
           </section>
         </>
       ) : (
-        "No hay servicios creados por este usuario"
+        "There are not created services by this user"
       )}
     </>
   ) : (

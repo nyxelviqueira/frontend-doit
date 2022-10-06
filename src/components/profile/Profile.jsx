@@ -11,20 +11,20 @@ export const Profile = (filterServices) => {
 
   const { user, loading, error } = useProfile(id);
   const { services } = useServices();
-  filterServices = services.filter((service) => service.idUser === user.id);
+  filterServices = services.filter((service) => service.idUser === user?.id);
 
   if (loading) return <Loading />;
   if (error) return <ErrorMessage message={error} />;
 
-  return (
+  return user ? (
     <>
       <section className="profile">
         <div className="avatarNameContainer">
-          <h2>{user.username}</h2>
-          {user.avatar ? (
+          <h2>{user?.username}</h2>
+          {user?.avatar ? (
             <img
               //Hay veces que me funciona sin poner carpeta uploads y otras que tengo que ponerla
-              src={`${process.env.REACT_APP_BACKEND}/${user.avatar}`}
+              src={`${process.env.REACT_APP_BACKEND}/${user?.avatar}`}
               alt="avatar"
               width={100}
               className="avatar"
@@ -39,10 +39,10 @@ export const Profile = (filterServices) => {
           )}
         </div>
         <div className="biographyContainer">
-          {user.biography ? (
+          {user?.biography ? (
             <>
               <h2>Biography</h2>
-              <p>{user.biography}</p>
+              <p>{user?.biography}</p>
             </>
           ) : (
             <div></div>
@@ -50,11 +50,11 @@ export const Profile = (filterServices) => {
         </div>
         <div className="emailContainer">
           <h2>Email</h2>
-          <p>{user.email}</p>
+          <p>{user?.email}</p>
         </div>
         <div className="cretedAtContainer">
           <h2>Created at</h2>
-          <p>{new Date(user.createdAt).toLocaleString()}</p>
+          <p>{new Date(user?.createdAt).toLocaleString()}</p>
         </div>
       </section>
 
@@ -63,5 +63,7 @@ export const Profile = (filterServices) => {
         <ServicesList services={filterServices} />
       </section>
     </>
+  ) : (
+    <ErrorMessage />
   );
 };

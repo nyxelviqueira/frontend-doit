@@ -1,18 +1,19 @@
 /* VERSIÓN MÓVIL */
+
 .services-list {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
   margin: 1rem;
   max-width: 100%;
   align-items: center;
-  margin-bottom: 7rem;
   overflow: hidden;
+  margin-bottom: 7rem;
 }
 
 .services-list .service-container-container {
   width: 100%;
-  height: 20rem;
+  height: 100%;
+  margin-bottom: 3rem;
 }
 
 .services-list .service-description {
@@ -26,11 +27,22 @@
   .services-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    height: 100%;
+    padding-right: 1.5rem;
+  }
+
+  .services-list .service-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
   }
 
   .services-list .service-container-container {
     width: 100%;
-    height: 20rem;
+    height: 100%;
     overflow: hidden;
     justify-content: center;
     align-items: center;
@@ -42,6 +54,7 @@
   .services-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    padding-right: 3rem;
   }
 
   .services-list .service-container {

@@ -19,7 +19,7 @@ export const Team = () => {
         <div className="team-wrap">
           <div className="team-member">
             <div className="team-img">
-              <img className="ramon" src={ramon} alt="Ramón" width={200} />
+              <img src={ramon} alt="Ramón" />
               <div className="overlay">
                 <div className="team-details">
                   <p className="text-social">
@@ -48,7 +48,7 @@ export const Team = () => {
         <div className="team-wrap">
           <div className="team-member">
             <div className="team-img">
-              <img className="paula" src={paula} alt="Paula" width={200} />
+              <img src={paula} alt="Paula" />
               <div className="overlay">
                 <div className="team-details">
                   <p className="text-social">
@@ -77,12 +77,7 @@ export const Team = () => {
         <div className="team-wrap">
           <div className="team-member">
             <div className="team-img">
-              <img
-                className="adriana"
-                src={adriana}
-                alt="Adriana"
-                width={200}
-              />
+              <img src={adriana} alt="Adriana" />
               <div className="overlay">
                 <div className="team-details">
                   <p className="text-social">
