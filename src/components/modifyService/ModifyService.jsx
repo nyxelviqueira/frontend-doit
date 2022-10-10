@@ -9,6 +9,8 @@ import { editModifyService } from "../../services";
 import useModal from "../../hooks/useModal";
 import Modal from "../modal/Modal";
 
+import "./modifyService.css";
+
 export const ModifyService = ({ service, setService }) => {
   const [error, setError] = useState("");
   const [sending, setSending] = useState(false);
@@ -56,7 +58,6 @@ export const ModifyService = ({ service, setService }) => {
         <Modal isOpen={isOpenModal} closeModal={closeModal}>
           <form onSubmit={handleForm} action="#" className="editService">
             <fieldset>
-              <legend>Modify your Service</legend>
               <ul>
                 <li>
                   <label htmlFor="category">Change Category</label>

@@ -6,11 +6,13 @@ import { Team } from "../components/team/Team";
 export const HomePage = () => {
   return (
     <main>
-      <p className="home-page-name">Welcome to DoIt!</p>
+      <section>
+      <h1 className="home-page-name">Welcome to DoIt!</h1>
       <p className="home-page-description">
         DoIt! Is an application where you can find all kind of services offered
         by houndred of freelancer specialised in differents categories.
       </p>
+      </section>
 
       <ServiceFinder />
 

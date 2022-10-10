@@ -4,6 +4,8 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import useServices from "../../hooks/useServices";
 
+import "./styles/servicesListPage.css";
+
 export const ListServicesPage = () => {
   const { services, loading, error } = useServices();
   const { user } = useContext(AuthContext);
@@ -13,13 +15,13 @@ export const ListServicesPage = () => {
 
   return user ? (
     <>
-      <h1>All Services</h1>
+      <h1 className="all-services-listname">All Services</h1>
       <NewServiceButton />
       <ServicesList services={services} />
     </>
   ) : (
     <>
-      <h1>All Services</h1>
+      <h1 className="all-services-listname">All Services</h1>
       <ServicesList services={services} />
     </>
   );

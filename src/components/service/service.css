@@ -56,9 +56,6 @@
 }
 
 .service-file-link {
-  /*   float: left;
-  margin-left: 3rem;
-  margin-top: 1.5rem; */
   text-transform: uppercase;
   font-size: 1rem;
   padding: 1rem 1rem;
@@ -77,7 +74,7 @@
 @media (min-width: 700px) {
   .service-file-link {
     float: left;
-    margin-left: 3rem;
+    /*    margin-left: 3rem; */
     margin-top: 1.5rem;
   }
 }
@@ -85,5 +82,7 @@
 /* VERSIÓN PC */
 @media (min-width: 1025px) {
   .service-file-link {
+    float: left;
+    margin-top: 1.5rem;
   }
 }

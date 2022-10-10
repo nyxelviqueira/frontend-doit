@@ -1,7 +1,7 @@
 /* MVL VERSION */
 
 .container-team {
-  margin-bottom: 5rem;
+  margin-bottom: 18rem;
 }
 
 .team-heading {
@@ -10,7 +10,6 @@
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
 }
 
 .team-heading-title {
@@ -24,21 +23,12 @@
   font-size: large;
 }
 
-.team-row {
-  display: flex;
-  flex-direction: column;
-  padding: 0 16px;
-  align-items: center;
-}
-
 .team-row::after {
   display: table;
   clear: both;
 }
 
-.team-wrap {
-  padding: 0 40px;
-}
+
 
 .overlay {
   background-color: rgba(14, 29, 52, 0.9);
@@ -221,6 +211,9 @@
 
 /* PC VERSION*/
 @media (min-width: 1025px) {
+  .container-team {
+    margin-bottom: 5rem;
+  }
   .team-heading {
     text-align: center;
     color: rgba(14, 29, 52, 0.9);

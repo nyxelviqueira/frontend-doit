@@ -5,6 +5,7 @@
   gap: 2rem;
   justify-content: center;
   text-align: center;
+  margin-bottom: 4rem;
 }
 
 .reply {
@@ -48,6 +49,11 @@
   overflow: hidden;
 }
 
-.not-files {
+.reply-date {
+  display: flex;
+  align-items: flex-end;
+}
+
+.reply-not-files {
   font-style: italic;
 }
