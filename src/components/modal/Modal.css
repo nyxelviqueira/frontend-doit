@@ -30,12 +30,16 @@
   max-height: 30rem;
   background-color: #fff;
   border-radius: 15px;
+  
 }
 
 .modal-close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  font-size: 1rem;
+  top: 0.8rem;
+  right: 0.8rem;
+  background-color: #fff;
+  cursor: pointer;
 }
 
 @media (min-width: 1025px) {

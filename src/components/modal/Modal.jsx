@@ -7,7 +7,7 @@ const Modal = ({ children, isOpen, closeModal }) => {
     <article className={`modal ${isOpen && "is-open"}`} onClick={closeModal}>
       <div className="modal-container" onClick={handleModalContainerClick}>
         <button className="modal-close" onClick={closeModal}>
-          X
+          &#x2718;
         </button>
         {children}
       </div>
