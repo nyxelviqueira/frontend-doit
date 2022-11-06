@@ -17,7 +17,7 @@ import { FilterServicesPage } from "./components/filterCategories/FilterServices
 
 function App() {
   return (
-    <main>
+    <div className="app-wrapper">
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -37,7 +37,7 @@ function App() {
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
-    </main>
+    </div>
   );
 }
 

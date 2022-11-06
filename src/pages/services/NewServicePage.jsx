@@ -33,7 +33,7 @@ export const NewServicePage = ({ addService }) => {
       <form onSubmit={handleForm} action="#" className="form-newServicePage">
         {/* <fieldset className="fieldset-newServicePage"> */}
         <legend className="legend-title">Create your new service</legend>
-        <ul>
+        <div>
           <div className="row-new">
             <div className="col-25-new">
               <label htmlFor="titleService" className="label-newService">
@@ -103,7 +103,7 @@ export const NewServicePage = ({ addService }) => {
               </div>
             </div>
           </div>
-        </ul>
+        </div>
         {/* </fieldset> */}
 
         <div className="row-new">

@@ -66,10 +66,7 @@
     border-color: #4a1a5e;
   }
  
-   form .button-register{
-     height: 45px;
-     margin: 35px 0
-   }
+  
    form .button-register {
     height: 100%;
     width: 100%;
@@ -80,9 +77,7 @@
     font-weight: 500;
     letter-spacing: 1px;
     border-radius: 5px;
-    
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    
     cursor: pointer;
     transition: all 0.3s ease;
    }
@@ -127,6 +122,11 @@
   }
   .input-box {
     margin-bottom: 5px;
+  }
+
+  form .button-register{
+    height: 50px;
+    margin: auto;
   }
   
 

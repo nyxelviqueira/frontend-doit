@@ -81,8 +81,8 @@ export const Team = () => {
               <div className="overlay">
                 <div className="team-details">
                   <p className="text-social">
-                    Adriana is a creative and communicative employee. See more
-                    about Adriana...
+                    Adriana is creative and communicative. See more about
+                    Adriana...
                   </p>
                   <div className="socials">
                     <a href="https://github.com/amb933">

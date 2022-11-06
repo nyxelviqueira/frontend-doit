@@ -15,7 +15,8 @@
   border-radius: 5px;
   background-color: #eee;
   padding: 20px;
-  color: 305182;
+  color: #305182;
+  height: 100vh;
 }
 
 /* Style inputs, select category and textarea */

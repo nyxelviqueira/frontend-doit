@@ -10,6 +10,11 @@
   padding: 0;
 }
 
+.app-wrapper {
+position:sticky;
+
+}
+
 li {
   list-style: none;
 }
@@ -20,7 +25,8 @@ a {
 
 body {
   position: relative;
-  padding-bottom: 2em;
-  min-height: 100vh;
+  padding-bottom: 0;
+  height: 100vh;
+ 
 }
 

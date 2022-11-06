@@ -116,7 +116,10 @@
   margin: 1.5rem;
   justify-content: center;
   text-align: center;
+  padding: 15px;
+  border-radius: 15px;
 }
+
 
 .setChanges {
   background-color: #0e1d34;

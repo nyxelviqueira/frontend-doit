@@ -91,7 +91,7 @@ export const HomePageCards = ({ service }) => {
           </div>
         </Link>
 
-        <Link to={`/services/category/Various`}>
+        <Link to={`/services/category/various`}>
           <div className="home-page-card">
             <img src={various} alt="various" />
             <h2 className="home-page-card-title">Various</h2>
