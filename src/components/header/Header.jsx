@@ -10,7 +10,7 @@ export const Header = () => {
         <img src={icon} alt="Icono" className="logo" />
 
         <Link to={"/"}>
-          <h1 className="title">DoIt!</h1>
+          <h1 className="title">Doit!</h1>
         </Link>
 
         <Link to={`/services`}>

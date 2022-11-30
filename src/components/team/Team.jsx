@@ -18,8 +18,8 @@ export const Team = () => {
       <div className="team-row">
         <div className="team-wrap">
           <div className="team-member">
-            <div className="team-img">
-              <img src={ramon} alt="Ramón" />
+            <div className="team-img" id="ramon">
+              <img src={ramon} alt="Ramón"/>
               <div className="overlay">
                 <div className="team-details">
                   <p className="text-social">

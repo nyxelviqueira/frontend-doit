@@ -4,10 +4,10 @@ export const Footer = () => {
   return (
     <footer>
       <p className="footer-description">
-        DoIt! was created by Ramón, Paula and Adriana. Students of Hack a Boss
-        on the 20th of september 2022
+        Doit! was created by Ramón, Paula and Adriana. Students of Hack a Boss
+        on the 8th of november 2022
       </p>
-      <p className="copyright">© Copyright DoIt!</p>
+      <p className="copyright">© Copyright Doit!</p>
     </footer>
   );
 };

@@ -7,9 +7,9 @@ export const HomePage = () => {
   return (
     <main>
       <section>
-      <h1 className="home-page-name">Welcome to DoIt!</h1>
+      <h1 className="home-page-name">Welcome to Doit!</h1>
       <p className="home-page-description">
-        DoIt! Is an application where you can find all kind of services offered
+        Doit! Is an application where you can find all kind of services offered
         by houndred of freelancer specialised in differents categories.
       </p>
       </section>
